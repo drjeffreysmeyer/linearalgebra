@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section_exponential" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponential Map</title>
+<p>
+    In this section we introduce exponential map.  As usual, we start with understanding the exponential map for matrices, extract its properties and then construct and analyze the formal object.
+</p>
+
+<subsection>
+    <title>The Exponential Matrix</title>
+    <p>
+        In this subsection we introduce the exponential matrix.  We will focus on the case of 2 by 2 matrices, but the results generalize to n by n matrices.
+    </p>
+    
+    <definition>
+    <title>Frobenius Norm</title>
+        <statement>
+            <p>
+                The <term>Frobenius norm</term> of a matrix <m>A = \begin{bmatrix} a \amp b\\c \amp d\end{bmatrix}</m> is defined as
+                <me> \|A\|_F = \sqrt{a^2 + b^2 + c^2 + d^2}</me>
+            </p>
+        </statement>
+    </definition>
+
+    <p>The Frobenius norm on matrices is just the standard Euclidean norm on the space of matrices when identified with <m>\R^{4}</m>. It immediately follows that it is positive definite, symmetric, bilinear, and moreover it induces the standard topology on the space of matrices.</p>
+
+    <proposition>
+        <title>The Frobenius Norm is Submultiplicative</title>
+        <statement>
+            <p>
+                If <m>A,B\in \mf{gl}_2(\R)</m> then <m>\|AB\|_F \leq \|A\|_F\|B\|_F</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <proof>
+        <p>
+            Let <m>A = \begin{bmatrix} a \amp b\\c \amp d\end{bmatrix}</m> and <m>B = \begin{bmatrix} e \amp f\\g \amp h\end{bmatrix}</m>. Then
+            <me> AB = \begin{bmatrix} ae+bg \amp af+bh\\ce+dg \amp cf+dh\end{bmatrix}</me>
+            so that
+            <me> \|AB\|_F^2 = (ae+bg)^2 + (af+bh)^2 + (ce+dg)^2 + (cf+dh)^2</me>
+            Using the Cauchy-Schwarz inequality twice and summing, we have
+            <md> 
+                <mrow> (ae+bg)^2 + (af+bh)^2 \amp  \leq (a^2+b^2)(e^2+f^2) + (a^2+b^2)(g^2+h^2) </mrow>
+                <mrow> \amp = (a^2+b^2)(e^2+f^2+g^2+h^2)</mrow>
+            </md>
+            and similarly
+            <md> 
+                <mrow> (ce+dg)^2 + (cf+dh)^2 \amp \leq (c^2+d^2)(e^2+f^2) + (c^2+d^2)(g^2+h^2)  </mrow> 
+                <mrow> \amp = (c^2+d^2)(e^2+f^2+g^2+h^2) </mrow>
+            </md>
+            Adding these two inequalities gives
+            <me> \|AB\|_F^2 \leq (a^2+b^2+c^2+d^2)(e^2+f^2+g^2+h^2) = \|A\|_F^2\|B\|_F^2</me>
+            Taking square roots gives the desired result.
+        </p>
+    </proof>
+
+
+    <proposition>
+        <statement>
+            <p>
+                If <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m> then the series
+                <me> e^A = I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3 + \cdots + \frac{1}{n!}A^n + \cdots</me>
+                is absolutely convergent relative to the Frobenius norm.
+            </p>
+        </statement>
+    </proposition>
+
+
+    <proof>
+        <p>
+            Let <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m>. Then
+            <me> \|e^A\|_F = \|I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3 + \cdots + \frac{1}{n!}A^n + \cdots\|_F</me>
+            By the triangle inequality and submultiplicativity of the Frobenius norm, we have
+            <me> \|e^A\|_F \leq 1 + \|A\|_F + \frac{1}{2}\|A\|_F^2 + \frac{1}{6}\|A\|_F^3 + \cdots + \frac{1}{n!}\|A\|_F^n + \cdots = e^{\|A\|_F}</me>
+            which is finite. Hence the series converges absolutely.
+        </p>
+    </proof>
+
+    <definition>
+        <title>Exponential Matrix</title>
+        <statement>
+            <p>
+                If <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m>, then its <term> exponential matrix</term> is the matrix
+                <me> e^A = I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3 + \cdots + \frac{1}{n!}A^n + \cdots</me>
+            </p>
+        </statement>
+    </definition>
+
+
+    <proposition>
+        <statement>
+            <p>
+                If <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m> and <m>A=PBP^{-1}</m> for some invertible matrix <m>P</m>, then <m>e^A = Pe^BP^{-1}</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <example>
+        <statement>
+            <p>It is good to know the exponential of some simple matrices explicitly. </p>
+            <p>
+                If <m>D = \begin{bmatrix}  a \amp 0\\0 \amp d\end{bmatrix}</m>, then
+                <m> e^D  = \begin{bmatrix}  e^a \amp 0\\0 \amp e^d\end{bmatrix}</m>
+            </p>
+            <p>
+                If <m>T = \begin{bmatrix}  0 \amp b\\0 \amp 0\end{bmatrix}</m>, then
+                <m> e^T  = \begin{bmatrix}  1 \amp b\\0 \amp 1\end{bmatrix}</m>
+            </p>
+            <p>
+                If <m>R = \begin{bmatrix}  0 \amp -t\\t \amp 0\end{bmatrix}</m>, then
+                <m> e^R  = \begin{bmatrix}  \cos(t) \amp -\sin(t)\\\sin(t) \amp \cos(t)\end{bmatrix}</m>
+            </p>
+        </statement>
+    </example>
+
+    <proposition>
+        <statement>
+            <p>
+                If <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m> then <m>\det(e^A) = e^{\tr(A)}</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <p> 
+        This result has several important implications.  First, the exponential matrix is always invertible, since <m>e^{\tr(A)}\neq 0</m>.  In other words, if <m>A\in \mf{gl}_2(\R)</m>, then <m>e^A\in \GL_2(\R)</m>.   Second, we may restrict the exponential matrix to the Lie subalgebra <m>\mf{sl}_2(\R)</m> of matrices with zero trace.  The restriction of the exponential map to <m>\mf{sl}_2(\R)</m> has image in <m>\SL_2(\R)</m>, the space of matrices with determinant one.  
+        
+    </p>
+
+
+    <p>
+        Food for thought - can you find a matrix <m>A\in \mf{gl}_2(\R)</m> such that <m>e^A = I</m> but <m>A\neq 0</m>?  
+        
+        Can you find a matrix <m>A\in \mf{gl}_2(\R)</m> such that <m>e^A = -I</m>?
+
+    </p>
+
+    <remark>
+        <title>Applications to Differential Equations</title>
+        <p>
+            The exponential map naturally appears when solving systems of linear differential equations. Consider the system of differential equations given by
+            <me> \frac{d}{dt}\vect{x}(t) = A\vect{x}(t)</me>
+            where <m>A</m> is a matrix and <m>\vect{x}(t)</m> is a vector-valued function. The solution to this system can be expressed in terms of the matrix exponential as
+            <me> \vect{x}(t) = e^{At}\vect{x}(0)</me>
+            where <m>\vect{x}(0)</m> is the initial condition. This representation allows us to analyze the behavior of the system, including stability and dynamics, by studying the properties of the matrix exponential.
+        </p>
+
+    </remark>
+
+
+  <proposition>
+        <statement>
+            <p>
+                If <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m> and <m>t\in \R</m>, then <m>\gamma(t)=e^{tA}</m> is a smooth curve in <m>\GL_2(\R)</m> such that <m>\gamma(0) = I</m> and <m>\gamma'(0) = A</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <proof>
+        <p>
+            Let <m>A = \begin{bmatrix}  a \amp b\\c \amp d\end{bmatrix} \in \mf{gl}_2(\R)</m> and <m>t\in \R</m>. Then
+            <me> \gamma(t) = e^{tA} = I + tA + \frac{1}{2}t^2A^2 + \frac{1}{6}t^3A^3 + \cdots + \frac{1}{n!}t^nA^n + \cdots</me>
+            is a smooth curve in <m>\GL_2(\R)</m> since the series converges absolutely. We have
+            <me> \gamma(0) = e^{0\cdot A} = I</me>
+            and
+            <me> \gamma'(t) = A + tA^2 + \frac{1}{2}t^2A^3 + \cdots + \frac{1}{(n-1)!}t^{n-1}A^n + \cdots</me>
+            so that
+            <me> \gamma'(0) = A</me>
+        </p>
+    </proof>
+
+  <proposition>
+    <title>Baker-Campbell-Hausdorff Formula</title>
+    <statement>
+            <p>
+                If <m>A,B \in \mf{gl}_2(\R)</m>, then <m>e^A e^B = e^{C}</m>  where <m>C</m> is a series in the brackets of <m>A</m> and <m>B</m>:
+                <me>C = A + B + \frac{1}{2}[A,B] + \frac{1}{12}([A,[A,B]] + [B,[B,A]]) - \frac{1}{24}[B,[A,[A,B]]] + \cdots</me>
+            </p>
+        </statement>
+    </proposition>
+
+
+</subsection>
+
+
+<subsection>
+    <title>The Exponential Map</title>
+    <p>
+        Motivated by the intuition from the exponential matrix, in this subsection we introduce the exponential map for formal Lie groups.
+    </p>
+
+    <definition>
+        <title>Exponential Map</title>
+        <statement>
+            <p>
+                Let <m>\mathfrak{g}</m> be a Lie algebra associated with a Lie group <m>G</m>. The <term>exponential map</term> is a smooth function
+                <me> \exp: \mathfrak{g} \to G </me>
+                with the properties that
+                <ol>
+                    <li>
+                        <p>
+                            <me> \exp(0) = e </me>
+                            where <m>e</m> is the identity element of the Lie group <m>G</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The derivative of the exponential map at the origin is the identity map on the Lie algebra:
+                            <me> d\exp_0 = \mathrm{id}_{\mathfrak{g}} </me>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>X\in \mathfrak{g}</m>, then the curve <m>\gamma(t) = \exp(tX)</m> is a smooth homomorphism such that <m>\frac{d}{dt}\exp(tX)\big|_{t=0} = X</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </definition>
+
+    <proposition>
+        <title>Existence of the Exponential Map</title>
+        <statement>
+            <p>
+                If <m>G</m> is a Lie group with Lie algebra <m>\mathfrak{g}</m>, then there exists an exponential map.
+            </p>
+        </statement>
+    </proposition>
+
+    <p>
+        Observe that the exponential map is necessarily unique, since the properties of the exponential map uniquely determine its behavior on a neighborhood of the identity.  
+    </p>
+
+    <proposition>
+        <statement>
+            <p>
+                If <m>f:G\to G'</m> is an smooth homomorphism of Lie groups and <m>X \in L(G)</m>, then <me>f(\exp(X)) = \exp(df(X)).</me>  In other words, the following diagram commutes:
+  <md>
+    \begin{CD}
+      L(G) @>df>>L(G') \\
+      @V{\exp}VV @VV{\exp}V \\
+      G @>>{f}> G'
+    \end{CD}
+  </md>
+            </p>
+        </statement>
+    </proposition>
+
+    <corollary>
+        <statement>
+            <p>
+              If <m>G</m> is a Lie group and <m>H</m> is a Lie subgroup of <m>G</m>, then the exponential map of <m>G</m> restricts to the exponential map of <m>H</m>. 
+            </p>
+        </statement>
+    </corollary>
+
+    <p>
+        Typically the best charts on a Lie group are the exponential charts.  In particular, if <m>G</m> is a Lie group with Lie algebra <m>\mathfrak{g}</m>, then there exists an open neighborhood <m>U\subset \mathfrak{g}</m> of the origin and an open neighborhood <m>V\subset G</m> of the identity such that <m>\exp: U \to V</m> is a diffeomorphism.  The inverse map <m>\log: V \to U</m> is called the <term>logarithm map</term>.
+    </p>  
+
+
+
+    <p>
+        Questions:  When is the exponential map surjective?  When is it injective?  When is it bijective?  When is it a diffeomorphism?
+    </p>  
+
+    </subsection>
+</section>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section_covers" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Covers</title>
+<p>
+    In this section we introduce closed subgroups of Lie groups.  As usual, we start with understanding the closed subgroups for matrix groups, extract their properties and then construct and analyze the formal object.
+</p>
+
+
+    <definition xml:id="definition-covering_space">
+        <title>Covering Space</title>
+        <statement>
+            <p>
+                If <m>X</m> is a topological space, then a <term>covering space</term> and <term>covering map</term> is a pair <m>(\tilde{X}, \pi)</m> where <m>\pi: \tilde{X} \to X</m> is a continuous surjective map such that every point in <m>X</m> has a neighborhood <m>U</m> for which <m>\pi^{-1}(U)</m> is a disjoint union of open sets, each of which is mapped homeomorphically onto <m>U</m> by <m>\pi</m>.
+            </p>
+        </statement>
+    </definition>
+
+
+    <theorem xml:id="theorem-lifting_of_maps">
+        <title>Lifting of Maps</title>
+        <statement>
+            <p>
+                If <m>X</m> is a topological space, <m>\pi: \tilde{X} \to X</m> a covering map, <m>Y</m> is a path-connected, locally path-connected space, and <m>f:Y\to X</m> is continuous map, then there exists a lift <m>\tilde{f}: Y \to \tilde{X}</m> such that <m>f = \pi \circ \tilde{f}</m> if and only if <me>f_* (\pi_1(Y)) \subset \pi_*(\pi_1(\tilde{X})).</me>
+            </p>
+        <image width="30%" xml:id="diagram-lifting_of_maps">
+            <latex-image>
+                \begin{tikzcd}
+                \amp \tilde{X} \arrow[d,"\pi"] \\
+                Y \arrow[ru,"\tilde{f}",dashrightarrow,] \arrow[r, "f"] \amp B \\
+                \end{tikzcd}
+            </latex-image>
+        </image>
+        </statement>
+    </theorem>
+
+    <theorem xml:id="theorem-simply_connected_covering_spaces">
+        <title>Existence of Simply Connected Covering Spaces</title>
+        <statement>
+            <p>
+                If <m>X</m> is a path connected, locally path connected, and semilocally simply connected, then there exists a simply connected covering space <m>\tilde{X}</m> and a covering map <m>\pi: \tilde{X} \to X</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <theorem xml:id="theorem-lifting_of_lie_algebra_homomorphisms">
+        <title>Lifting of Lie Algebra Homomorphisms</title>
+        <statement>
+            <p>
+                If <m>G</m> is a simply connected Lie group, <m>G'</m> is a Lie group, and <m>T:L(G) \to L(G')</m> is a Lie algebra homomorphism, then there exists a unique Lie group homomorphism <m>\tilde{T}: G \to G'</m> such that <m>d\tilde{T} = T</m>.
+            </p>
+        <image width="40%" xml:id="diagram-of_lie_algebra_homomorphisms">
+            <latex-image>
+                \begin{tikzcd}
+                G   \arrow[r,"\tilde{T}",dashrightarrow] \amp G' \\
+                L(G) \arrow[u,"\exp"] \arrow[r, "T"] \amp L(G')\arrow[u,"\exp"] \\
+                \end{tikzcd}
+            </latex-image>
+        </image>
+        </statement>
+    </theorem>
+
+
+    <theorem xml:id="theorem-covering_space_lie_group">
+        <title>Covering Space of a Lie Group</title>
+        <statement>
+            <p>
+                If <m>G</m> is a connected Lie group, then there exists a simply connected Lie group <m>\tilde{G}</m> and a covering map <m>\pi: \tilde{G} \to G</m> which is also a Lie group homomorphism.
+            </p>
+        </statement>
+    </theorem>
+
+
+    
+
+
+</section>

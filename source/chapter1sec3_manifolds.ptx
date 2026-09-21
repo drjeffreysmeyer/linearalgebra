@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section_manifolds" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Manifolds</title>
+
+
+<subsection>
+    <title>Manifolds</title>
+
+
+    <definition xml:id="definition-topological_manifold">
+        <title>Topological Manifold</title>
+        <statement>
+            <p>
+                A <term>topological manifold</term> of dimension <m>n</m> is a topological space <m>M</m> that is Hausdorff, second-countable, and locally homeomorphic to <m>\mathbb{R}^n</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <definition xml:id="definition-smooth_manifold">
+        <title>Smooth Manifold</title>
+        <statement>
+            <p>
+                A <term>smooth structure</term> on a topological manifold <m>M</m> is an equivalence class of atlases, where two atlases are equivalent if their union is a smooth atlas.   A <term>smooth manifold</term> is a topological manifold equipped with a smooth structure.
+            </p>
+        </statement>
+    </definition>
+
+<definition xml:id="definition-smooth_map">
+    <title>Smooth Map</title>
+    <statement>
+        <p>
+            Let <m>M</m> and <m>N</m> be smooth manifolds.  A map <m>f:M\to N</m> is <term>smooth</term> if for every chart <m>(U,\phi)</m> on <m>M</m> and every chart <m>(V,\psi)</m> on <m>N</m>, the map
+            <me>\psi \circ f \circ \phi^{-1}:\phi(U\cap f^{-1}(V))\to \psi(V)</me>
+            is smooth in the usual sense.
+        </p>
+    </statement>
+</definition>   
+
+<definition xml:id="definition-smooth_functions">
+    <title>Smooth Functions</title>
+    <statement>
+        <p>
+            Let <m>M</m> be a smooth manifold.  A function <m>f:M\to \mathbb{R}</m> is <term>smooth</term> if for every chart <m>(U,\phi)</m> on <m>M</m>, the map
+            <me>f \circ \phi^{-1}:\phi(U)\to \mathbb{R}</me>
+            is smooth in the usual sense.  We denote the space of all smooth functions on <m>M</m> by <m>C^\infty(M)</m>.
+        </p>
+    </statement>
+</definition> 
+
+
+<proposition xml:id="proposition-smooth_functions_is_a_commutative_algebra">
+    <title>Smooth Functions Form a Commutative Algebra</title>
+    <statement>
+        <p>
+            Let <m>M</m> be a smooth manifold.  Then <m>C^\infty(M)</m> is a commutative algebra over <m>\mathbb{R}</m>.
+        </p>
+    </statement>    
+</proposition>
+
+</subsection>
+<subsection>
+    <title>Tangent Spaces</title>
+
+<definition xml:id="definition-smooth_curve">
+    <title>Smooth Curve</title>
+    <statement>
+        <p>
+            A <term>smooth curve</term> in a smooth manifold <m>M</m> is a smooth map <m>\gamma:\mathbb{R}\to M</m>.
+        </p>
+    </statement>
+</definition>
+
+<definition xml:id="definition-tangential_curves">
+    <title>Tangential Curves</title>
+    <statement>
+        <p>
+            Two smooth curves <m>c_1</m> and <m>c_2</m> in a smooth manifold <m>M</m> are <term>tangential</term> at a point <m>p</m> if for all smooth functions <m>f</m> defined in a neighborhood of <m>p</m>, the derivatives <m>(f \circ c_1)'(0)</m> and <m>(f \circ c_2)'(0)</m> are equal.
+        </p>
+        <p> 
+    If two smooth curves <m>c_1</m> and <m>c_2</m> in a smooth manifold <m>M</m> are tangential at a point <m>p \in M</m>, we write <m>c_1 \sim c_2</m>.
+</p>
+    </statement>
+</definition>
+
+
+
+<proposition xml:id="proposition-tangential_curves_equivalence_relation">
+    <title>Tangential Curves is an Equivalence Relation</title>
+    <statement>
+        <p>
+            Let <m>M</m> be a smooth manifold and let <m>p \in M</m>.  Then the relation of being tangential at <m>p</m> is an equivalence relation on the set of smooth curves in <m>M</m> that pass through <m>p</m>.
+        </p>
+    </statement>
+</proposition>
+
+<p>
+    We denote the equivalence class of a smooth curve <m>c</m> in a smooth manifold <m>M</m> that passes through a point <m>p \in M</m> by <m>[c]</m>.
+</p>
+
+<definition xml:id="definition-tangent_vector">
+    <title>Tangent Vector</title>
+    <statement>
+        <p>
+            A <term>tangent vector</term> at a point <m>p</m> in a smooth manifold <m>M</m> is an equivalence class of smooth curves in <m>M</m> that are tangential at <m>p</m>.
+        </p>
+    </statement>
+</definition>
+
+
+<definition xml:id="definition-tangent_space">
+    <title>Tangent Space</title>
+    <statement>
+        <p>
+            The <term>tangent space</term> of a smooth manifold <m>M</m> at a point <m>p \in M</m>, denoted <m>T_pM</m>, is the set of equivalence classes of smooth curves in <m>M</m> that are tangential at <m>p</m>.
+        </p>
+    </statement>
+</definition>
+
+<proposition xml:id="proposition-tangent_space_is_a_vector_space">
+    <title>Tangent Space is a Vector Space</title>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold and <m>p \in M</m>, then the tangent space <m>T_pM</m> is a vector space over <m>\mathbb{R}</m>.
+        </p>
+    </statement>
+</proposition>
+
+<definition xml:id="definition-tangent_bundle">
+    <title>Tangent Bundle</title>
+    <statement>
+        <p>
+            The <term>tangent bundle</term> of a smooth manifold <m>M</m>, denoted <m>TM</m>, is the disjoint union of all tangent spaces at each point in <m>M</m>.  
+            In symbols, <m>TM = \bigsqcup_{p \in M} T_pM</m>.
+            There is a natural projection map <m>\pi:TM\to M</m> that sends each tangent vector to the point in <m>M</m> at which it is tangent.
+        </p>
+    </statement>
+</definition>
+
+</subsection>
+
+<subsection>
+    <title>Differential Maps</title>
+
+
+<definition xml:id="definition-differential_map">
+    <title>Differential Map</title>
+    <statement>
+        <p>
+            If <m>f:M\to N</m> is a smooth map of smooth manifolds and <m>p \in M</m>, then the maps  
+            <me>df_p:T_pM\to T_{f(p)}N</me> 
+            defined by
+            <me>df_p([c]) = [f \circ c]</me>
+            is called the <term>differential</term> of <m>f</m> at <m>p</m>.
+        </p>
+    </statement>
+</definition>
+
+
+<proposition xml:id="proposition-differential_map_is_well_defined">
+    <title>Differential Map is Well Defined</title>
+    <statement>
+        <p>
+            If <m>f:M\to N</m> is a smooth map of smooth manifolds and <m>p \in M</m>, then the differential map  
+            <me>df_p:T_pM\to T_{f(p)}N</me> 
+            is well defined.
+        </p>
+    </statement>
+</proposition>
+
+<p>
+    In the case where <m>f:M\to \R</m> is a smooth function on <m>M</m> and <m>p \in M</m>, then the differential map  
+    <me>df_p:T_pM\to T_{f(p)}\R \cong \R</me> 
+    if precisely the standard single variable derivative
+    <me>df_p([c]) = \frac{d}{dt}[f \circ c](0).</me>
+    In this case, we call <m>df_p</m> the <term>directional derivative</term> of <m>f</m> at <m>p</m>.
+</p>
+
+
+<proposition xml:id="proposition-differential_map_is_linear">
+    <title>Differential Map is Linear</title>
+    <statement>
+        <p>
+            If <m>f:M\to N</m> is a smooth map of smooth manifolds and <m>p \in M</m>, then the differential map  
+            <me>df_p:T_pM\to T_{f(p)}N</me> 
+            is linear.
+        </p>
+    </statement>
+</proposition>
+
+
+<definition xml:id="definition-immersion">
+        <title>Immersion</title>
+        <statement>
+            <p>
+                A smooth map <m>f:M\to N</m> of smooth manifolds is an <term>immersion</term> at a point <m>p \in M</m> if the differential map
+                <me>df_p:T_pM\to T_{f(p)}N</me>
+                is injective.  The map <m>f</m> is an immersion if it is an immersion at every point <m>p \in M</m>.
+            </p>
+        </statement>
+</definition>
+
+<definition xml:id="definition-submersion">
+        <title>Submersion</title>
+        <statement>
+            <p>
+                A smooth map <m>f:M\to N</m> of smooth manifolds is a <term>submersion</term> at a point <m>p \in M</m> if the differential map
+                <me>df_p:T_pM\to T_{f(p)}N</me>
+                is surjective.  The map <m>f</m> is a submersion if it is a submersion at every point <m>p \in M</m>.
+            </p>
+        </statement>
+</definition>
+
+
+<theorem xml:id="theorem-inverse_function_theorem">
+    <title>Inverse Function Theorem</title>
+    <statement>
+        <p>
+            If <m>f:M\to N</m> is a smooth map of smooth manifolds with <m>p\in M</m>, then if the differential map <m>df_p:T_pM\to T_{f(p)}N</m>is a linear isomorphism, then <m>f</m> is a local diffeomorphism near <m>p</m>.
+        </p>
+    </statement>
+</theorem>
+
+</subsection>
+
+</section>

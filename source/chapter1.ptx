@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter01" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Background</title>
+
+
+  <!-- include sections -->
+  <xi:include href="chapter1sec1.ptx" />
+  <xi:include href="chapter1sec2.ptx" />
+  <xi:include href="chapter1sec3_manifolds.ptx" />
+  <xi:include href="chapter1sec4_vector_fields.ptx" />  
+</chapter>

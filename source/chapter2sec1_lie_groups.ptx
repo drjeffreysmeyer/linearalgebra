@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section_lie_groups" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lie Groups</title>
+<p>
+    In this section we introduce Lie groups.  We start with understanding the matrix Lie groups, extract their properties and then construct and analyze the formal object.
+</p>
+
+<subsection>
+    <title>Matrix Lie Groups</title>
+    
+    <p>
+        We already know that <m>\GL_2(\R)</m> is a locally compact topological group, but we know more.  As a subset of <m>\R^{4}</m>, it is an open set.  Therefore, it is a smooth manifold.  
+        
+        If <m>A,B\in \GL_n(\R)</m> where <m>A = \begin{bmatrix} a \amp b\\c \amp d\end{bmatrix}</m> and <m>B = \begin{bmatrix} e \amp f\\g \amp h\end{bmatrix}</m>, then 
+        
+        <me> AB = \begin{bmatrix} ae + bg \amp af + bh\\ce + dg \amp cf + dh\end{bmatrix}.</me>
+        
+        and 
+
+        <me> A^{-1} = \frac{1}{ad-bc}\begin{bmatrix} d \amp -b\\-c \amp a\end{bmatrix}.</me>
+        
+        Observe that the group multiplication is given by polynomial maps on the entries of the matrices, and these maps are smooth.  Inversion is given by the adjugate matrix divided by the determinant, which is a rational function on its domain of definition.  Therefore the group structure maps of <m>\GL_2(\R)</m> are smooth.  
+    </p>
+        
+    <p>
+        The tangent space at the identity is <m>T_I\GL_2(\R) = \R^{2\times 2}</m> and the Lie bracket is given by the commutator of matrices, <me>[A,B] = AB - BA.</me>
+    </p>
+
+
+
+    <p>
+        More generally, but for the same reasons, <m>\GL_n(\R)</m> an open, and hence smooth subset of <m>\R^{n^2}</m>.       
+        The group multiplication is given by polynomial maps on the entries of the matrices, and these maps are smooth.  Inversion is given by the adjugate matrix divided by the determinant, which is a rational function on its domain of definition.  Therefore the group structure maps of <m>\GL_n(\R)</m> are smooth.  
+    </p>
+
+
+
+</subsection>
+
+
+<subsection>
+    <title>Lie Groups 101</title>
+
+    <definition>
+        <title>Lie Groups</title>
+        <statement>
+            <p>
+                A <term> Lie group</term> is a smooth manifold that is also a group, such that the group structure maps <m> G \times G \to G </m> and <m> G \to G </m> are smooth.
+            </p>
+        </statement>
+    </definition>
+
+<remark>
+    <title>Smooth vs Analytic </title>
+    <p>
+        You will find that some authors define Lie groups as analytic manifolds (e.g. Serre).  While it might seem this is a stronger condition than being smooth, in fact, every smooth Lie group admits a unique analytic structure compatible with the smooth structure.
+    </p>
+</remark>
+
+
+<example>
+    <title>Examples of Lie Groups</title>
+    <p>
+        The following are examples of Lie groups:
+        <ul>
+            <li> <m>\GL_n(\R)</m> and <m>\GL_n(\C)</m> </li>
+            <li> <m>\SL_n(\R)</m> and <m>\SL_n(\C)</m> </li>
+        </ul>
+    </p>
+</example>
+
+
+    <definition>
+        <title>Left Invariant Vector Field</title>
+        <statement>
+            <p>
+                A <term> left invariant vector field</term> on a Lie group <m>G</m> is a vector field <m>X</m> such that for all <m>g,h \in G</m>, we have
+                <me> dL_g (X_h) = X_{gh}, </me>
+                where <m>L_g</m> is the left translation by <m>g</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <proposition xml:id="proposition-left_invariant_vector_fields_form_a_lie_algebra">
+        <statement>
+            <p>
+                If <m>G</m> is a Lie group, then the set <m>L(G)</m> of left invariant vector fields on <m>G</m> is a Lie subalgebra of <m>\mathfrak{X}(G)</m> under the Lie bracket of vector fields.
+            </p>
+        </statement>
+    </proposition>
+
+
+
+    <definition>
+        <title>Lie Algebra of a Lie Group</title>
+        <statement>
+            <p>
+                The <term> Lie algebra</term> of a Lie group <m>G</m>, which we will denote by <m>L(G)</m>, is the set of left-invariant vector fields on <m>G</m>, equipped with a bracket operation [ , ] that makes it a Lie algebra.
+            </p>
+        </statement>
+    </definition>
+
+    <proposition xml:id="proposition-lie_algebra_is_tangent_space_at_identity">
+        <statement>
+            <p>
+                The Lie algebra of a Lie group <m>G</m> is isomorphic as a vector space to the tangent space <m>T_eG</m> at the identity element <m>e</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    
+    <definition>
+    `   <title>Lie Group Homomorphism</title>
+        <statement>
+            <p>
+                A <term> Lie group homomorphism</term> is a set map <m>f: G \to G'</m> between Lie groups that is both a group homomorphism and an smooth map.
+            </p>
+        </statement>
+    </definition>
+
+
+
+
+
+    <proposition>
+        <statement>
+            <p>
+                If <m>f: G \to G'</m> is a Lie group homomorphism, then <m>df: L(G) \to L(G')</m> is a Lie algebra homomorphism.
+            </p>
+        </statement>
+    </proposition>
+
+    <proposition xml:id="proposition-lie_algebra_isomorphism_implies_local_diffeomorphism">
+        <title>Lie algebra isomorphism implies local diffeomorphism</title>
+        <statement>
+            <p>
+                If <m>f: G \to G'</m> is a Lie group homomorphism and <m>df: L(G) \to L(G')</m> is an isomorphism, then <m>f</m> is a local diffeomorphism.
+            </p>
+        </statement>
+    </proposition>
+
+
+
+
+
+    </subsection>
+</section>

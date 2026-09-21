@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp1sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Topological Groups</title>
+<p>
+    In this section we introduce the theory of topological groups which will later aid us in our study of Lie groups. The prerequesites for this chapter are basic point-set topology and basic group theory, which can be found in Munkres and Dummet and Foote respectively.
+</p>
+
+<subsection>
+    <title>Point-Set Topology of Topological Groups</title>
+
+    <definition>
+        <statement>
+            <p>
+                A <term>topological group</term> <m>G</m> is a group with a Hausdorff topology such that the maps <m>\mu\colon G\times G\to G</m> and <m>\iota:G\to G</m> given by <m>\mu(x,y) = xy</m> and <m>\iota(x) = x^{-1}</m> are continuous. Here <m>G\times G</m> is given the product topology.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        For each <m>g\in G</m> left (resp. right) multiplication by <m>g</m> is also a homeomorphism of <m>G</m> whose inverse is given by left (resp. right) multiplication by <m>g^{-1}</m>. As inversion is an involution (i.e. <m>\iota^2=Id</m>), it is also a homeomorphism.
+    </p>
+
+    <example>
+        <statement>
+            <p>
+                The <q>topological fields</q> <m>\R</m>, <m>\C</m>, and the <m>p</m>-adics <m>\Q_p</m> provide a wealth of examples. Let <m>k</m> be one of these fields. Then <m>k</m> with addition and <m>k^\times</m> with multiplication are topological groups. The vector space <m>k^n</m> with the product topology is a topological group. In particular, <m>M_n(k)\cong k^{n^2}</m> is a topological group. Furthermore multiplication in <m>M_n(k)</m> is also continuous. (Check this!) Then <m>GL_n(k)</m>, which is an open subset, forms a topological group with respect to multiplication.
+            </p>
+        </statement>
+    </example>
+
+    <example>
+        <statement>
+            <p>
+                Many important topological groups are matrix groups, such as <m>GL_n(\R)</m>, <m>O_n</m>, <m>SO_n</m>, <m>GL_n(\C)</m>, <m>U_n</m>, and <m>SU_n</m>.
+            </p>
+        </statement>
+    </example>
+
+    <example>
+        <statement>
+            <p>
+                Any group given the discrete topology is a topological group.
+            </p>
+        </statement>
+    </example>
+
+    <remark>
+      <title>Nonexample - The Zariski Topology</title>
+      <p>
+        
+      <m>\R</m> with the Zariski topology is <em>not</em> a topological group as it is not Hausdoff.  Show <m>\Z</m> is Zariski-dense in <m>\R</m>.
+            </p>
+
+    </remark>
+
+    <definition>
+        <statement>
+            <p>
+                A subset <m>E\subseteq G</m> is said to be <em>symmetric</em> if whenever <m>x\in E</m>, we have <m>x^{-1}\in E</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Let <m>G</m> be a topological group, and <m>U</m> a neighborhood of the identity <m>e</m>. Then <m>U^{-1}</m> is also a neighborhood of the identity, and thus <m>U\cap U^{-1}</m> is a symmetric neighborhood of <m>e</m>.
+    </p>
+
+    <lemma>
+        <statement>
+            <p>
+                Any neighborhood of an <m>x\in G</m> is of the form <m>xU</m> for some neighborhood <m>U</m> of <m>e</m>.
+            </p>
+        </statement>
+    </lemma>
+
+    <proposition xml:id="lbl003">
+        <statement>
+            <p>
+                Let <m>U</m> be a neighborhood of <m>e</m>, and <m>n</m> a positive integer. Then there is a neighborhood <m>V</m> of <m>e</m> such that <m>V^n = \underbrace{V\cdots V}_{n \text{ times}}\subseteq U</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <proof>
+        <p>
+            The multiplication map <m>\varphi\colon G\times\cdots\times G\to G</m> is continuous. Therefore <m>\varphi^{-1}(U)</m> is a neighborhood of <m>(e,\ldots,e)</m>. We may then choose neighborhoods <m>V_1,\ldots,V_n</m> of <m>e</m> such that <m>V_1\times\cdots\times V_n\subseteq \varphi^{-1}(U)</m>. Set <m>V = V_1\cap\cdots\cap V_n</m>.
+        </p>
+    </proof>
+
+    <definition>
+        <statement>
+            <p>
+                Let <m>X</m> a topological space, and <m>Y\subseteq X</m>. We say that <m>Y</m> is <em>locally closed</em> in <m>X</m> if for all <m>y\in Y</m> there is a neighborhood <m>N_y</m> of <m>y</m> in <m>X</m> such that <m>N_y\cap Y</m> is closed in <m>N_y</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <proposition xml:id="lbl001">
+        <statement>
+            <p>
+                Let <m>X</m> be a topological space with <m>Y\subseteq X</m> a subspace. Then <m>Y</m> is locally closed if and only if <m>Y = O\cap C</m> for some open set <m>O\subseteq X</m> and some closed set <m>C\subseteq X</m>.
+            </p>
+        </statement>
+    </proposition>
+
+    <proof>
+        <p>
+            (<m>\Longrightarrow</m>): For each <m>y\in Y</m>, let <m>N_y</m> be an open neighborhood of <m>y</m> such that <m>N_y\cap Y</m> is closed in <m>N_y</m>. Then <m>U_y = N_y\setminus Y</m> is open in <m>N_y</m> for each <m>y</m>, and hence open in <m>X</m>. In particular, <m>U = \bigcup_y U_y</m> is open in <m>X</m>, and <m>U</m> is contained in <m>O = \bigcup_y N_y</m>. But <m>Y = O\setminus U</m>, so <m>Y</m> is closed in <m>O</m>.
+        </p>
+        <p>
+            (<m>\Longleftarrow</m>): Clear.
+        </p>
+    </proof>
+
+    <example>
+        <statement>
+            <p>
+                Closed and open subsets are locally closed.
+            </p>
+        </statement>
+    </example>
+
+    <example>
+        <statement>
+            <p>
+                A locally compact subset of a Hausdorff space is locally closed. Let <m>X</m> be Hausdorff and <m>Y\subseteq X</m> be locally compact. For <m>y\in Y</m> there exists a neighborhood <m>N_y\subseteq X</m> of <m>y</m> such that <m>\ol{N_y}\cap Y</m> is compact in <m>Y</m>. Then <m>\ol{N_y}\cap Y</m> is closed in <m>X</m> and hence <m>(\ol{N_y}\cap Y)\cap N_y=N_y\cap Y</m> is closed in <m>N_y</m>.
+            </p>
+        </statement>
+    </example>
+
+    <lemma>
+        <statement>
+            <p>
+                Let <m>G</m> be a topological group and <m>H\subseteq G</m> a subgroup. Then <m>\ol{H}\subseteq G</m> is a subgroup.
+            </p>
+        </statement>
+    </lemma>
+
+    <proof>
+        <p>
+            Pick <m>x,y\in \ol{H}</m> and let <m>U</m> be a neighborhood of <m>xy^{-1}</m>. It suffices to show <m>\ol{H}\cap U</m> is nonempty. By the continuity of multiplication, there exist neighborhoods <m>V</m> of <m>x</m> and <m>W</m> of <m>y^{-1}</m> such that <m>VW\subseteq U</m>. Since <m>x,y\in\ol{H}</m>, <m>V\cap H</m> and <m>W^{-1}\cap H</m> are nonempty. Pick <m>g\in V\cap H</m> and <m>h\in W^{-1}\cap H</m>. Then <m>gh^{-1}\in H\cap VW \subseteq H\cap U</m>. Therefore <m>xy^{-1}\in\ol{H}</m>.
+        </p>
+    </proof>
+
+    <lemma xml:id="lbl002">
+        <statement>
+            <p>
+                Let <m>G</m> be a topological group with <m>H\subseteq G</m> a subgroup. If <m>H</m> is open, then <m>H</m> is closed.
+            </p>
+        </statement>
+    </lemma>
+
+    <proof>
+        <p>
+            Since <m>H</m> is open, each translate <m>Hg</m> is open for <m>g\in G</m>. Using coset representatives <m>g</m>, we have that <m>G = \bigsqcup_g Hg</m>, so that in particular <m>H = G\setminus \bigsqcup_{g\neq 1} Hg</m>. As each <m>Hg</m> is open, <m>H</m> is closed.
+        </p>
+    </proof>
+
+    <corollary>
+        <statement>
+            <p>
+                If <m>G</m> is a connected topological group, then any open subgroup <m>H\subseteq G</m> must be <m>G</m>.
+            </p>
+        </statement>
+    </corollary>
+
+    <corollary>
+        <statement>
+            <p>
+                A locally closed subgroup of a topological group is closed.
+            </p>
+        </statement>
+    </corollary>
+
+    <proof>
+        <p>
+            Let <m>H\leq G</m> be locally closed. By replacing <m>G</m> with <m>\ol{H}</m>, we may without loss of generality assume that <m>H</m> is dense in <m>G</m>. By Proposition <xref ref="lbl001"/>, there exists an open set <m>O\subseteq G</m> and a closed set <m>C\subseteq G</m> such that <m>H = O\cap C</m>. As <m>H</m> is dense in <m>G</m> and <m>C</m> contains <m>H</m>, we can conclude that <m>C = G</m>, so that <m>H = O</m>. The result then follows from Lemma <xref ref="lbl002"/>.
+        </p>
+    </proof>
+
+    <lemma>
+        <statement>
+            <p>
+                Let <m>G</m> be a topological group and let <m>N\subseteq G</m> be a subset with nonempty interior. Then <m>H = \langle N\rangle=\{\text{Subgroup Generated by } N\}</m> is an open subgroup of <m>G</m>.
+            </p>
+        </statement>
+    </lemma>
+
+    <proof>
+        <p>
+            Let <m>O</m> be a nonempty open subset of <m>N</m>, and let <m>x\in O</m>. Then for all <m>h\in H</m>, <m>hx^{-1}O</m> is an open neighborhood of <m>h</m> contained in <m>H</m>. Thus <m>H</m> is open.
+        </p>
+    </proof>
+
+    <corollary>
+        <statement>
+            <p>
+                A connected topological group <m>G</m> is generated by any subset with a nonempty interior. In particular, any neighborhood of <m>e</m> generates <m>G</m>.
+            </p>
+        </statement>
+    </corollary>
+
+    <definition>
+        <statement>
+            <p>
+                Let <m>G</m> be a topological group and <m>H\subseteq G</m> a subgroup. Let <m>G/H</m> be the space of left cosets and let <m>\pi\colon G\to G/H</m> be the projection map. The <em>quotient topology</em> on <m>G/H</m> is the finest topology such that <m>\pi</m> is continuous. In particular, a subset <m>E\subseteq G/H</m> is open if and only if <m>\pi^{-1}(E)\subseteq E</m> is open.
+            </p>
+        </statement>
+    </definition>
+
+    <lemma>
+        <statement>
+            <p>
+                Let <m>G</m> be a topological group, and <m>H\leq G</m>. Then <m>\pi\colon G\to G/H</m> is an open map.
+            </p>
+        </statement>
+    </lemma>
+
+    <proof>
+        <p>
+            Suppose that <m>U\subseteq G</m> is open. Then so is <m>hU</m> for all <m>h\in H</m>, so that <m>\bigcup_{h\in H} hU = HU</m> is open in <m>G</m>. But <m>\pi^{-1}(\pi(U)) = UH</m>, so it must be that <m>\pi(U)</m> is open.
+        </p>
+    </proof>
+
+    <proposition xml:id="lbl010">
+        <statement>
+            <p>
+                Let <m>G</m> be a topological group and let <m>H\subseteq G</m> be a subgroup. Then <m>G/H</m> is Hausdorff if and only if <m>H</m> is closed.
+            </p>
+        </statement>
+    </proposition>
+
+    <proof>
+        <p>
+            (<m>\Longrightarrow</m>): Since <m>G/H</m> is Hausdorff, one point sets are closed. In particular, <m>\{e\cdot H\} = \{H\}</m> is closed, so that <m>\pi^{-1}(\{H\}) = H</m> is closed in <m>G</m>.
+        </p>
+        <p>
+            (<m>\Longleftarrow</m>): Let <m>f\colon G\times G\to G</m> be the map <m>(x,y)\mapsto x^{-1}y</m>. Then <m>f</m> is continuous, so <m>f^{-1}(H)</m> is closed in <m>G\times G</m>. But <m>f^{-1}(H) = \{(x,y)\mid xH = yH\}</m>. Thus if <m>xH\neq yH</m> in <m>G/H</m>, <m>(x,y)\notin f^{-1}(H)</m>, and thus there exist open neighborhoods <m>U</m> and <m>V</m> of <m>x</m> and <m>y</m> respectively such that <m>(U\times V)\cap f^{-1}(H) = \emptyset</m>. By Proposition <xref ref="lbl010"/>, <m>\pi(U)</m> and <m>\pi(V)</m> are open neighborhoods of <m>xH</m> and <m>yH</m>, respectively. Furthermore, it is easily seen that the condition <m>(U\times V)\cap f^{-1}(H) = \emptyset</m> forces <m>\pi(U)\cap \pi(V) = \emptyset</m>.
+        </p>
+    </proof>
+
+
+
+
+<exercises xml:id="exercises-21">
+    <p>
+        In each of the following exercises, let <m>G</m> be a topological group unless stated otherwise.
+    </p>
+    <exercise>
+        <title>Seperation Conditions</title>
+        <statement>
+            <p>
+                In our definition of a topological group, we assumed <m>G</m> to be Hausdorff. In this exercise you will show we could have assumed something much weaker than Hausdorff but the group structure will give us something much stronger than Hausdorff.
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        Let <m>G</m> be group with a topology in which points are closed and multiplication and inversion are continuous. Show that <m>G</m> is a topological group.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Suppose that <m>H \subset G</m> is a closed subgroup. Show that <m>G/H</m> is regular. In particular <m>G</m> is regular.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        (<m>\star</m>) Show that <m>G</m> is completely regular. (Hint: Adapt the proof of the Urysohn lemma.)
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Let <m>H\subset G</m> be a subgroup. Show that <m>H</m> is open if and only if <m>G/H</m> is discrete.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Suppose <m>A</m> and <m>B</m> are subspace of <m>G</m> such that <m>A</m> is closed and <m>B</m> is compact. Show that <m>AB</m> closed.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Suppose that <m>H\subset G</m> is a compact subgroup. Show that the quotient map is closed.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Suppose that <m>H\subset G</m> is a compact subgroup and that <m>G/H</m> compact. Show that <m>G</m> is compact.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Show that the connected component of <m>G</m> containing the identity, denoted <m>G^0</m>, is a normal subgroup.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Suppose that <m>G</m> is first countable and is either separable or Lindelof. Show that <m>G</m> is second countable.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Suppose that <m>G</m> is locally compact and <m>H\subset G</m> is a subgroup. Show that <m>G/H</m> is locally compact.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Suppose that <m>G</m> is locally compact and connected. Show that <m>G</m> is paracompact.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>
+                Show that <m>\pi_1G</m> is an abelian group.
+            </p>
+        </statement>
+    </exercise>
+
+    
+</exercises>
+
+</subsection>
+
+</section>

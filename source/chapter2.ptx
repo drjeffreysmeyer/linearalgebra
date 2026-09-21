@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter02" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lie Objects</title>
+
+  <!-- include sections -->
+  <xi:include href="chapter2sec1_lie_groups.ptx" />
+  <xi:include href="chapter2sec2_exp.ptx" />
+  <xi:include href="chapter2sec3_closed_subgroups.ptx" />
+  <xi:include href="chapter2sec4_correspondance.ptx" />
+  <xi:include href="chapter2sec5_covers.ptx" />
+</chapter>

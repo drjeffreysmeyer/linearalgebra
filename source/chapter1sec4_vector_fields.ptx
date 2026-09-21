@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="section_vector_fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vector Fields</title>
+
+
+<subsection>
+    <title>Vector Fields</title>
+
+    <p>
+        Let <m>M</m> be a smooth manifold.  Let <m>C^\infty(M)</m> denote the space of smooth functions on <m>M</m>.  A <term>vector field</term> on <m>M</m> is a smooth assignment of a tangent vector to each point of <m>M</m>.  In other words, a vector field is a smooth map <m>X:M\to TM</m> such that <m>\pi\circ X=\mathrm{id}_M</m>, where <m>\pi:TM\to M</m> is the canonical projection.  The space of all vector fields on <m>M</m> is denoted by <m>\mathfrak{X}(M)</m>.
+    </p>
+
+    <definition>
+        <title>Vector Field</title>
+        <statement>
+            <p>
+                If <m>M</m> is a smooth manifold, then a <term>vector field</term> on <m>M</m> is a smooth assignment of a tangent vector to each point of <m>M</m>.  More precisely, if <m>\pi:TM\to M</m> is the tangent bundle, then a vector field is a smooth map <m>X:M\to TM</m> such that <m>\pi\circ X=\mathrm{id}_M</m>.
+            </p>
+        </statement>
+    </definition>
+
+<definition xml:id="definition-directional_derivative">
+    <title>Directional Derivative</title>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold and <m>X \in \mathfrak{X}(M)</m>, then the <term>directional derivative</term> <m>D_X</m> is a linear map from <m>C^\infty(M)</m> to <m>C^\infty(M)</m> defined by
+            <me>D_X(f)(p) = df_p(X_p).</me>
+        </p>
+        
+    </statement>
+</definition>
+
+<p>
+            By abuse of notation, we will often write <m>X(f)</m> instead of <m>D_X(f)</m> for the directional derivative associated to <m>X</m>.
+        </p>
+
+<proposition xml:id="proposition-vector_field_derivative_satisfies_leibniz_rule">
+    <title>Directional Derivative Satisfy Leibniz Rule</title>    
+    <statement>
+        <p>
+            If <m>X \in \mathfrak{X}(M)</m>, then the directional derivative <m>D_X:C^\infty(M)\to C^\infty(M)</m> satisfies the Leibniz rule:
+            <me>D_X(fg) = D_X(f)g + fD_X(g)</me>
+            for all <m>f,g \in C^\infty(M)</m>.
+        </p>
+    </statement>
+
+    <proof>
+        
+        
+        
+    <p>
+        This is a direct proof following definitions.  Let <m>X \in \mathfrak{X}(M)</m>, <m>p \in M</m>, and let <m>c:I\to M</m> be a curve with <m>c(0)=p</m> and <m>c'(0)=X_p</m>.  Let <m>f,g \in C^\infty(M)</m>.  Then using definitions and the single variable product rule we have
+        <md>
+            <mrow> D_X(fg)(p) \amp = d(fg)_p(X_p) </mrow>
+            <mrow> \amp = \frac{d}{dt}[(fg)\circ c](0) </mrow>
+            <mrow> \amp = \frac{d}{dt}[(f \circ c)(g \circ c)](0) </mrow>
+            <mrow> \amp = (f \circ c)'(0) (g \circ c)(0)+(f \circ c)(0) (g \circ c)'(0) </mrow>
+            <mrow> \amp = df_p(X_p)g(p) + f(p)dg_p(X_p) </mrow>
+            <mrow> \amp = D_X(f)(p)g(p) + f(p)D_X(g)(p). </mrow>
+        </md>
+        Since this holds for all <m>p \in M</m>, we conclude that
+        <me>D_X(fg) = D_X(f)g + fD_X(g).</me>
+        </p>
+    </proof>
+
+    <proof>
+    <title>Hint</title>
+
+        <p>This is a direct proof. You may find <xref ref="definition-differential_map"/> and <xref ref="definition-directional_derivative"/> and  useful.
+
+
+    </p>
+</proof>
+</proposition>
+
+
+
+<definition>
+    <title>Derivation</title>
+    <statement>
+        <p>
+            A <term>derivation</term> on a commutative algebra <m>A</m> is a linear map <m>D:A \to A</m> that satisfies the Leibniz rule:
+            <me>D(ab) = D(a)b + aD(b)</me>
+            for all <m>a,b \in A</m>.  Let <m>\mathrm{Der}(A)</m> denote the space of all derivations on <m>A</m>.
+        </p>
+    </statement>
+</definition>
+
+
+
+
+<proposition xml:id="proposition-vector_fields_and_derivations_are_isomorphic">
+    <title>Vector Field and Derivations are Isomorphic</title>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold, then the map
+            <me>D: \mathfrak{X}(M) \to \mathrm{Der}(C^\infty(M))</me>
+            defined by <me>D(X) = D_X</me> is an isomorphism of vector spaces. 
+        </p>
+    </statement>
+</proposition>
+
+<proof>
+    <p>
+        By <xref ref="proposition-vector_field_derivative_satisfies_leibniz_rule"/>, we know that for each <m>X \in \mathfrak{X}(M)</m>, the directional derivative <m>D_X:C^\infty(M)\to C^\infty(M)</m> is a derivation.  Thus the map
+        <me>D: \mathfrak{X}(M) \to \mathrm{Der}(C^\infty(M))</me>
+        defined by <me>D(X) = D_X</me> is well-defined.  Linearity follows from following the definitions.
+    </p>
+    <p>
+        To show that <m>D</m> is injective, let <m>X,Y \in \mathfrak{X}(M)</m> such that <me>D(X) = D(Y)</me>.  Then for all <m>f \in C^\infty(M)</m> and all <m>p \in M</m>, we have
+        <me>
+            df_p(X_p) = D_X(f)(p) = D_Y(f)(p) = df_p(Y_p).
+        </me>
+        Since this holds for all smooth functions <m>f</m>, we conclude that <m>X_p = Y_p</m> for all <m>p \in M</m>, and hence <m>X=Y</m>.  Thus the map <m>D</m> is injective.
+    </p>
+    <p>
+        To show that <m>D</m> is surjective, let <m>D \in \mathrm{Der}(C^\infty(M))</m>.  For each point <m>p \in M</m>, define a linear map
+        <me>\tilde{D}_p: C^\infty(M) \to T_pM</me>
+        by
+        <me>\tilde{D}_p(f) = D(f)(p).</me>
+        It can be shown that this map satisfies the Leibniz rule, and hence defines a tangent vector at each point.  By varying the point, we obtain a smooth vector field on <m>M</m>.  Thus every derivation arises from a vector field, and hence the map <m>D</m>
+    </p>
+</proof>
+
+<definition>
+    <title>Lie Bracket of Derivations</title>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold and <m>D_1, D_2 \in \mathrm{Der}(C^\infty(M))</m>, then the <term>Lie bracket</term> of <m>D_1</m> and <m>D_2</m> is the map <m>[D_1,D_2]:C^\infty(M)\to C^\infty(M)</m> defined by
+            defined by
+            <me>[D_1,D_2](f) = D_1(D_2(f)) - D_2(D_1(f))</me>
+            for all <m>f \in C^\infty(M)</m>.
+        </p>
+    </statement>
+</definition>
+
+<proposition>
+    <title>The Lie Bracket of Derivations is a Derivation</title>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold and <m>D_1, D_2\in \mathrm{Der}(C^\infty(M))</m>, then the Lie bracket <m>[D_1,D_2]</m> is also a derivation.
+        </p>
+    </statement>    
+    <proof>
+        <p>
+            This is a direct proof following definitions.  Let <m>f,g \in C^\infty(M)</m>.   First check
+            <md>
+                <mrow> [D_1,D_2](fg) \amp = D_1(D_2(fg)) - D_2(D_1(fg)) </mrow>
+                <mrow>  \amp = D_1(D_2(f)g + fD_2(g)) - D_2(D_1(f)g + fD_1(g)).</mrow>
+            </md>
+            Expanding this expression and using the Leibniz rule for <m>D_1</m> and <m>D_2</m>, we obtain
+            <md>
+                <mrow> [D_1,D_2](fg) \amp= D_1(D_2(f))g + D_2(f)D_1(g) + D_1(f)D_2(g) + fD_1(D_2(g)) </mrow>
+                <mrow> \amp - D_2(D_1(f))g - D_1(f)D_2(g) - D_2(f)D_1(g) - fD_2(D_1(g)).</mrow>
+            </md>
+            Simplifying, we find that
+            <md>
+                <mrow> [D_1,D_2](fg)\amp= (D_1(D_2(f)) - D_2(D_1(f)))g + f(D_1(D_2(g)) - D_2(D_1(g))) </mrow>
+                <mrow>\amp= [D_1,D_2](f)g + f[D_1,D_2](g).</mrow>
+            </md>
+            Thus the Lie bracket <m>[D_1,D_2]</m> satisfies the Leibniz rule, and hence is a derivation.
+        </p>
+    </proof>
+</proposition>
+
+<proposition>
+    <title>The Lie Bracket of Derivations Satisfies the Jacobi Identity</title>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold and <m>D_1, D_2, D_3 \in \mathrm{Der}(C^\infty(M))</m>, then the Lie bracket 
+            <me>[D_1,[D_2,D_3]] + [D_2,[D_3,D_1]] + [D_3,[D_1,D_2]] = 0.</me>
+            This is known as the <term>Jacobi identity</term>.
+        </p>
+    </statement>    
+    <proof>
+        <p>
+            This is a direct proof following definitions.  We expand each term, with adjacent derivations denoting composition.
+            <md>
+                <mrow> [D_1,[D_2,D_3]] \amp = D_1[D_2,D_3] - [D_2,D_3] D_1 </mrow>
+                <mrow> \amp =D_1 D_2 D_3 - D_1 D_3 D_2 - D_2 D_3 D_1 + D_3 D_2 D_1 </mrow>
+                <mrow> [D_2,[D_3,D_1]] \amp = D_2[D_3,D_1] - [D_3,D_1] D_2 </mrow>
+                <mrow> \amp =D_2 D_3 D_1 - D_2 D_1 D_3 - D_3 D_1 D_2 + D_1 D_3 D_2 </mrow>
+                <mrow> [D_3,[D_1,D_2]] \amp = D_3[D_1,D_2] - [D_1,D_2] D_3 </mrow>
+                <mrow> \amp =D_3 D_1 D_2 - D_3 D_2 D_1 - D_1 D_2 D_3 + D_2 D_1 D_3 </mrow>
+            </md>
+            Adding these three expressions, we find that all terms cancel, and we obtain the Jacobi identity.
+        </p>
+    </proof>
+</proposition>
+
+
+
+<p>
+    Via
+    the isomorphism <xref ref="proposition-vector_fields_and_derivations_are_isomorphic"/>, we can define a Lie bracket on the space of vector fields <m>\mathfrak{X}(M)</m> by defining
+    <me>[X,Y] = D^{-1}([D(X),D(Y)])</me>
+    for all <m>X,Y \in \mathfrak{X}(M)</m>.  In other words, the Lie bracket of vector fields is defined by the commutator of the associated directional derivatives.   In the remainder of the book, as is common in the field, we will omit the isomorphism and just often write <me>[X,Y](f) = X(Y(f)) - Y(X(f))</me> for the Lie bracket of vector fields.
+</p>
+
+
+
+<definition>
+    <title>Lie Algebra</title>
+    <statement>
+        <p>
+            A vector space <m>\mathfrak{g}</m> is a <term> Lie algebra</term>  if it is equipped with a bilinear map <me>[ , ]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}</me> called the <term> Lie bracket</term> that satisfies the following properties:
+            <ol>
+                <li> <term>Antisymmetry</term>: <me>[X,Y] = -[Y,X]</me> for all <m>X,Y \in \mathfrak{g}</m>. </li>
+                <li> <term>Jacobi Identity</term>: <me>[X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0</me> for all <m>X,Y,Z \in \mathfrak{g}</m>. </li>
+            </ol>   
+        </p>
+    </statement>
+</definition>
+
+
+
+<proposition>
+    <statement>
+        <p>
+            If <m>M</m> is a smooth manifold, then the space of vector fields <m>\mathfrak{X}(M)</m> is a Lie algebra with respect to the Lie bracket defined by
+            <me>[X,Y](f) = X(Y(f)) - Y(X(f))</me>
+            for all <m>X,Y \in \mathfrak{X}(M)</m> and <m>f \in C^\infty(M)</m>.
+        </p>
+    </statement>
+</proposition>
+
+
+    <definition xml:id="definition-lie_algebra_homomorphism">
+        <title>Lie Algebra Homomorphism</title>
+        <statement>
+            <p>
+                A linear map <m>T: \mathfrak{g} \to \mathfrak{h}</m> between Lie algebras is a <term> Lie algebra homomorphism</term> if it preserves the Lie bracket, i.e.,
+                <me>T([X,Y]) = [T(X),T(Y)]</me>
+                for all <m>X,Y \in \mathfrak{g}</m>.
+            </p>
+        </statement>
+    </definition>
+
+
+
+    <definition xml:id="definition-f-related">
+        <title><m>f</m>-Related Vector Fields</title>
+        <statement>
+            <p>
+                If <m>f: M \to N</m> is a smooth map between smooth manifolds, and <m>X \in \mathfrak{X}(M)</m> and <m>Y \in \mathfrak{X}(N)</m> are vector fields, we say that <m>X</m> and <m>Y</m> are <term><m>f</m>-related</term> if for all <m>p \in M</m>, we have
+                <me> df_p(X_p) = Y_{f(p)}. </me>
+            </p>
+        </statement>
+    </definition>
+
+    <proposition xml:id="proposition-f-related_vector_fields_preserve_lie_bracket">
+        <statement>
+            <p>
+                If <m>f: M \to N</m> is a smooth map between smooth manifolds and with and <m>X_1, X_2 \in \mathfrak{X}(M)</m> and <m>Y_1,Y_2 \in \mathfrak{X}(N)</m> are vector fields such that <m>X_1</m> and <m>Y_1</m> are <m>f</m>-related and <m>X_2</m> and <m>Y_2</m> are <m>f</m>-related, then <m>[X_1,X_2]</m> and <m>[Y_1,Y_2]</m> are <m>f</m>-related.
+            </p>
+        </statement>
+        <proof>
+            This is a direct proof.  Follow the definitions.  You may find <xref ref="definition-f-related"/> useful.
+        </proof>
+    </proposition>
+
+
+
+
+</subsection>
+
+
+
+</section>
