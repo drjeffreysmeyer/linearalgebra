@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec7" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+        <title>Coordinates</title>
+        <p>
+            We can <em>reason</em> about definitions and properties and definitions, but we cannot perform computations without <em>coordinates</em>.
+            Abstract vector spaces naturally exist everywhere around us, but coordinates do not.
+            We need to make a <em>choice</em> on how to lay a coordinate grid down upon the vector space, and this is exactly what choosing a basis does.
+        </p>
+        <definition xml:id="def-coordmap">
+            <title>Coordinates</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a vector space with ordered basis <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}</m>, and <m>\vect{w}\in V</m>, then by <xref ref="prop-basis-lincomb_exists_unique"/>, there exists unique scalars <m>x_1,\ldots, x_n\in F</m> such that <m>\vect{w}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n</m>.
+                    This collection of scalars is the <term>coordinates</term> of <m>\vect{w}</m> relative to the ordered basis <m>\mathcal{B}</m>.
+                    We collect them in the <term><m>\mathcal{B}</m>-coordinate vector</term>
+                </p>
+                <me>[\vect{w}]_\mathcal{B} := \begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n\end{bmatrix}</me>
+                <p>
+                    The set map
+                </p>
+                <me>\Coord_\mathcal{B}:V\to F^n, \quad \vect{w}\mapsto [\vect{w}]_\mathcal{B}</me>
+                <p>
+                    is the <term><m>\mathcal{B}</m>-coordinate map</term>, or more precisely, the map <term>into</term> <m>\mathcal{B}</m>-coordinates.
+                </p>
+            </statement>
+        </definition>
+        <proposition xml:id="prop-coord_map_is_linear">
+            <title>The coordinate map is linear</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a finite dimensional vector space over <m>F</m> and <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset V</m> is an ordered basis, then the coordinate map associated to <m>\mathcal{B}</m>, <m>\Coord_{\mathcal{B}}:V\to F^n</m>, is a linear map.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. You may find <xref ref="def-coordmap"/>, <xref ref="prop-basis-lincomb_exists_unique"/>, <xref ref="def-vectorspace"/>, and <xref ref="def-linearmap"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop-mix_and_coord_inverses">
+            <title>The coordinate map and mixture map are inverses</title>
+            <statement>
+                <p>
+                    If <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset V</m> is an ordered basis, then
+                </p>
+                <me>\Coord_\mathcal{B} \circ \Mix_\mathcal{B}=\id_{F^n} \quad \text{and}\quad \Mix_\mathcal{B} \circ \Coord_\mathcal{B}=\id_{V}.</me>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. Show both equalities, one at a time. Recall in the proof of <xref ref="prop_dimension_of_lists"/> you found the standard basis vectors <m>\mathcal{S}=\{\vect{e}_1,\ldots, \vect{e}_n\}\subset F^n</m>. You might find <xref ref="def-mixturemap"/>, <xref ref="def-coordmap"/>, <xref ref="def-linearmap"/>, <xref ref="prop-mix_map_is_linear"/>, <xref ref="prop-coord_map_is_linear"/>, <xref ref="prop_identity_is_linear"/>, <xref ref="prop-comp_of_linear_is_linear"/>, <xref ref="prop-map_determined_by_basis"/>, and <xref ref="prop_dimension_of_lists"/> useful.
+            </p>
+        </proof>
+        <corollary xml:id="theorem_coordinate_theorem">
+            <title>Coordinate Isomorphism</title>
+            <statement>
+                <p>
+                    If <m>\mathcal{B}\subset V</m> is an ordered basis, then the <m>\mathcal{B}</m>-coordinate map <m>\Coord_\mathcal{B}:V\to F^n</m>, <m>\vect{w}\mapsto [\vect{w}]_{\mathcal{B}}</m> is an isomorphism.
+                </p>
+            </statement>
+        </corollary>
+        <proof>
+            <p>
+                Try a direct proof. You might find <xref ref="def-isomorphism"/> and <xref ref="prop-mix_and_coord_inverses"/> useful.
+            </p>
+        </proof>
+
+        <insight>
+            
+        <p>
+            In this reflection, you will analyze the mental act of coordinatization. A vector space does not come with grid lines. Now think about what you just proved in <xref ref="theorem_coordinate_theorem"/> - upon choosing an ordered basis, you lay a coordinate grid down upon your vector space. In several paragraphs, carefully responds to the following prompts.
+        </p>
+        <ol>
+            <li>
+                <p>In your own words, internalize and explain the power of this result.</p>
+            </li>
+            <li>
+                <p>In what other contexts have you seen similar results (e.g. calculus)? Describe and explain.</p>
+            </li>
+            <li>
+                <p>In what ways might you say these kinds of results, in which you <alert>coordinatize</alert> a previously coordinate-free object, are problem solving strategies? Explain.</p>
+            </li>
+        </ol>
+                </insight>
+
+
+
+</section>
+
+
+
+
+
+
+
+

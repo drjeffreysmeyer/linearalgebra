@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+        <title>Building our Library of Vector Space Examples</title>
+        <definition xml:id="def-vector_space_of_lists">
+            <title>The Set of Lists</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field and <m>n\in \Z_+</m>, then the set of lists of length <m>n</m>,
+                </p>
+                <me>F^n=\left\{\begin{bmatrix}v_1\\v_2\\ \vdots \\ v_n \end{bmatrix} \ \bigg| \ v_1,\ldots, v_n\in F\right\}</me>
+                <p>
+                    comes with two binary operations:
+                </p>
+                <me>+:\ F^n\times F^n \to F^n \hspace{3pc} \begin{bmatrix}v_1\\v_2\\ \vdots \\ v_n \end{bmatrix} + \begin{bmatrix}w_1\\w_2\\ \vdots \\ w_n \end{bmatrix} \mapsto \begin{bmatrix}v_1+w_1\\v_2+w_2\\ \vdots \\ v_n+w_n \end{bmatrix}</me>
+                <me>\cdot:\ F\times F^n \to F^n \hspace{3pc} c\cdot \begin{bmatrix}v_1\\v_2\\ \vdots \\ v_n \end{bmatrix} \mapsto \begin{bmatrix}cv_1\\cv_2\\ \vdots \\ cv_n \end{bmatrix}</me>
+                <p>
+                    We will say that addition and scaling are done <term>entry-by-entry</term>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            When typing, we will always use the <alert>bold</alert> font letter to denote a vector and the associated unbolded letter for its entries.
+            When writing by hand, we will write vectors with a right pointing arrow overhead.
+            For example <m>\vect{v}=\vec{v}=\begin{bmatrix}v_1\\v_2\\ \vdots \\ v_n \end{bmatrix}</m> and <m>\vect{w}=\vec{w}=\begin{bmatrix}w_1\\w_2\\ \vdots \\ w_n \end{bmatrix}</m>.
+        </p>
+        <proposition xml:id="prop-vector_space_of_lists">
+            <title>Vector space of lists</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field and <m>n\in \Z_+</m>, then <m>F^n</m> is a vector space over <m>F</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                You need to verify each vector space property (VS1)-(VS8).
+                Carefully do this, one-by-one.
+                Most are straight forward.
+                What list must you select to be the zero vector?
+                Given a list, what must be its inverse?
+                You may find  <xref ref="def-vector_space_of_lists"/> and  <xref ref="def-field"/> useful.
+            </p>
+        </proof>
+        <definition xml:id="def-vector_space_of_sequences">
+            <title>The Set of Sequences</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field, then the set of infinite sequences
+                </p>
+                <me>F^\infty:=F^{\Z_+}= \left\{(v_1,v_2, \ldots, v_n, \ldots )\ | \ v_i\in F \text{ for all } i\in \Z_+\right\}</me>
+                <p>
+                    comes with two binary operations:
+                </p>
+                <me>+:\ F^\infty\times F^\infty \to F^\infty \hspace{3pc} (v_1,v_2, \ldots ) + (w_1,w_2, \ldots ) \mapsto (v_1+w_1,v_2+w_2, \ldots )</me>
+                <me>\cdot:\ F\times F^\infty \to F^\infty \hspace{3pc} c\cdot (v_1,v_2, \ldots ) \mapsto (cv_1,cv_2, \ldots )</me>
+                <p>
+                    We will say that addition and scaling are done <term>entry-by-entry</term>.
+                </p>
+            </statement>
+        </definition>
+        <proposition>
+            <title>Vector space of sequences</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field, then <m>F^\infty</m> is a vector space over <m>F</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                Leverage a proof you have seen before.
+                You may find  <xref ref="def-vector_space_of_sequences"/> and <xref ref="def-field"/> useful.
+            </p>
+        </proof>
+        <definition xml:id="def-vector_space_of_functions">
+            <title>The Set of Set Maps</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field and <m>X</m> is a set, then the set of all set maps from <m>X</m> to <m>F</m>
+                </p>
+                <me>\mathcal{F}(X,F):= \{f \ | \ f:X\to F\}</me>
+                <p>
+                    comes with two binary operations:
+                </p>
+                <ol>
+                    <li>
+                        <p>
+                            <term>(Addition.)</term> If <m>f,g\in \mathcal{F}(X,F)</m>, then <m>f+g</m> denotes the new function defined by the rule:<br/>
+                            <em>if <m>x\in X</m>, then <m>(f+g)(x):=f(x)+g(x)</m>.</em>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <term>(Scaling.)</term> If <m>c\in F</m> and <m>f\in \mathcal{F}(X,F)</m>, then <m>cf</m> denotes the new function define by the rule:<br/>
+                            <em>if <m>x\in X</m>, then <m>(cf)(x):=c(f(x))</m>.</em>
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </definition>
+        <proposition xml:id="prop-vector_space_of_functions">
+            <title>Vector space of functions</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field and <m>X</m> is a set, then <m>\mathcal{F}(X,F)</m> is a vector space over <m>F</m> with operations <m>(f+g)(x):=f(x)+g(x)</m> and <m>(af)(x):=a(f(x))</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                Leverage a proof you have seen before.
+                What set map must you select to be the zero vector?
+                Given a set map, what must be its inverse?
+                You may find  <xref ref="def-vector_space_of_functions"/> and  <xref ref="def-field"/> useful.
+            </p>
+        </proof>
+        <p>
+            Take note of the follow phrasing: <em>the vector space of...</em>.
+            No longer are we constrained to view vectors as lists, but rather objects that satisfy properties.
+            It is up to us to see what structures around us are instances vector spaces.
+        </p>
+        <proposition>
+            <title>Field extensions are vector spaces over the base field</title>
+            <statement>
+                <p>
+                    If <m>E</m> is a field and <m>F\subset E</m> is a subfield, then <m>E</m> is a vector space over <m>F</m> with operations coming from the field structure.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                Leverage a proof you have seen before.
+                What field element must you select to be the zero vector?
+                Given a element of the field <m>E</m>, what must be its inverse?
+                You may find  <xref ref="def-field"/> useful.
+            </p>
+        </proof>
+
+        <insight>
+            
+        <p>
+            Structural abstraction of <m>\R^n</m>, followed by instantiation, has now produced many new and different instances of vector spaces that share the mixing behavior of <m>\R^n</m>.
+            In what way does seeing <m>F^n</m>, <m>F^\infty</m>, <m>\mathcal{F}(X,F)</m>, and a field <m>E</m> containing <m>F</m> as instances of the same formal object affect your understanding of each of them, or of the formal object vector spaces, itself?
+        </p>
+        </insight>
+
+</section>
+
+
+
+
+
+
+
+

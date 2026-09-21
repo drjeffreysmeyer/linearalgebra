@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+        <title>First Algebraic Properties</title>
+        <p>
+            In this investigation, you will deduces basic algebraic properties of vector spaces.
+            Throughout, <m>V</m> will be taken to be a vector space over a field <m>F</m>.
+        </p>
+        <proposition>
+            <title>The zero vector is unique</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field, <m>V</m> is a vector space over <m>F</m>, and <m>\vect{0},\vect{0}'\in V</m> both satisfy the property that, for all <m>\vect{v}\in V</m>, <m>\vect{0}+\vect{v}=\vect{v}</m> and <m>\vect{0}'+\vect{v}=\vect{v}</m>, then <m>\vect{0}=\vect{0}'</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Carefully and appropriately utilize copy and paste.
+                You may also find <xref ref="prop-field-addititive_identity_uniqueness"/> and <xref ref="def-vectorspace"/> useful.
+            </p>
+        </proof>
+        <p>
+            We are therefore justified in discussing <em>the</em> zero vector.
+        </p>
+        <proposition>
+            <title>Inverses are unique</title>
+            <statement>
+                <p>
+                    If <m>F</m> is a field, <m>V</m> is a vector space over <m>F</m>, <m>\vect{v}\in V</m>, and both <m>\vect{w}</m> and <m>\vect{w}'</m> satisfy the property that <m>\vect{v}+\vect{w}=\vect{0}</m> and <m>\vect{v}+\vect{w}'=\vect{0}</m>, then <m>\vect{w}=\vect{w}'</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Have you seen a similar result whose proof you may leverage?
+            </p>
+        </proof>
+
+        <p> 
+        We are therefore justified in discussing <em>the</em> additive inverse of a vector. Given a vector <m>\vect{v}\in V</m>, we will denote its additive inverse by <m>-\vect{v}</m>.
+        </p>
+
+        <proposition xml:id="prop-vs-zero_scaling">
+            <statement>
+                <p>
+                    If <m>\vect{v}\in V</m>, then <m>0\vect{v} = \vect{0}</m>
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Have you seen a similar result whose proof you may leverage?
+            </p>
+        </proof>
+        <proposition xml:id="prop-vector_space_inverses_scaling">
+            <statement>
+                <p>
+                    If <m>\vect{v}\in V</m>, then <m>(-1)\vect{v} = -\vect{v}</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Have you seen a similar result whose proof you may leverage?
+            </p>
+        </proof>
+        <proposition xml:id="prop-vs-scaling_zero_vector">
+            <statement>
+                <p>
+                    If <m>k\in F</m>, then <m>k\vect{0}=\vect{0}</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Have you seen a similar result whose proof you may leverage?
+            </p>
+        </proof>
+    
+</section>
+
+
+
+
+
+
+
+

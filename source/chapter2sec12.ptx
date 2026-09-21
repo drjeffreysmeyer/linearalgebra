@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec12" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Dimension</title>
+    <p>
+        Throughout this subsection, <m>V</m> will denote a vector space over the field <m>F</m>.
+    </p>
+    <definition xml:id="def-finitedimensional">
+        <title>Finite Dimensional</title>
+        <statement>
+            <p>
+                If there exists a <em>finite</em> subset <m>S\subset V</m> such that <m>S</m> spans <m>V</m>, (i.e. <m>\spn(S)=V</m>), then <m>V</m> is <term>finite dimensional</term>.
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="thm_ind_less_span">
+        <title>Independent sets are no larger than spanning sets</title>
+        <statement>
+            <p>
+                If <m>V</m> is finite dimensional, then the size of an independent set is less than or equal to the size of any spanning set of <m>V</m>.
+            </p>
+        </statement>
+    </theorem>
+    <proof>
+        <p>
+            Try a direct proof.
+            <m>I</m> could potentially be either finite or infinite.
+            It suffices to prove the result for <m>I</m> finite (why???).
+            Suppose that <m>I=\{\vect{u}_1,\ldots, \vect{u}_i\}</m> is an independent set and <m>S=\{\vect{v}_1,\ldots, \vect{v}_s\}</m> is a spanning set.
+            Your goal is to show <m>i\le s</m>.
+            Try to produce a set <m>S_i</m> such that <m>I\subset S_i</m> and <m>\spn(S_i)=\spn(S)=V</m>.
+            You might be able to do this with an iterative process that I will now suggest.
+        </p>
+        <p>
+            Consider the set <m>S_1':=\{\vect{u}_1\}\cup S=\{\vect{u}_1,\vect{v}_1,\ldots, \vect{v}_s\}</m>.
+            Deduce <m>\spn(S_1')=V</m>.
+            Deduce <m>S_1'</m> is dependent.
+            Deduce there exists some <m>\vect{v}_{j_1}\in S_1'</m> such that <m>\spn(S_1')=\spn(S_1'-\{\vect{v}_{j_1}\})</m>.
+            Let <m>S_1:=S_1'-\{\vect{v}_{j_1}\}</m>.
+            Observe <m>|S_1|=|S|=s</m>.
+            Appropriately iterate this strategy, creating <m>S_2'</m>, <m>S_2</m>, <m>S_3'</m>, etc. until you are left with the desired <m>S_i</m>.
+            Justify why this process terminates after you have put all of <m>I</m> into <m>S_i</m>, and not before.
+            You may find <xref ref="def-finitedimensional"/>, <xref ref="prop-dependence-prop2"/>, <xref ref="thm-rra"/>, and <xref ref="prop-dependence-prop3"/> useful.
+        </p>
+    </proof>
+
+    <insight>
+        
+    <p>
+        <xref ref="thm_ind_less_span"/> is often called the <q>first nontrivial result</q> in axiomatic linear algebra.
+        While that may be a little too strong, its proof is different that those of previous results.
+        Analyze the proof of <xref ref="thm_ind_less_span"/> and over the span of several paragraphs, carefully identify and describe features (strategies, arguments, ways of thinking, etc.) that are unique to it.
+        Do you agree that <xref ref="thm_ind_less_span"/> is the first nontrivial theorem we have encountered? Explain?
+    </p>
+    </insight>
+
+    <corollary xml:id="cor_dimension_well_defined">
+        <title>Independent spanning sets have the same cardinality</title>
+        <statement>
+            <p>
+                If <m>V</m> is finite dimensional, and <m>S_1</m> and <m>S_2</m> are linearly independent spanning sets, then <m>|S_1|=|S_2|</m>.
+            </p>
+        </statement>
+    </corollary>
+    <proof>
+        <p>
+            Try using <xref ref="thm_ind_less_span"/>… twice.
+        </p>
+    </proof>
+    <definition xml:id="def-dimension">
+        <title>Dimension</title>
+        <statement>
+            <p>
+                If <m>V</m> is finite dimensional, and <m>S</m> is an independent spanning set, then the <term>dimension</term> of <m>V</m> is <m>|S|</m>.
+                In symbols, we write <m>\dim V:=|S|</m>.
+                If <m>V</m> is not finite dimensional, we write <m>\dim V =\infty</m>.
+                The dimension of the trivial subspace is taken to be 0.
+            </p>
+        </statement>
+    </definition>
+    <proposition xml:id="prop_dimension_of_lists">
+        <statement>
+            <p>
+                If <m>n\in \Z_+</m>, then <m>\dim F^n=n</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Find a set of <m>n</m> vectors that are independent and spanning.
+            Be sure to verify they satisfy these conditions.
+            You may find <xref ref="def-vector_space_of_lists"/>, <xref ref="def-dependence"/>, and <xref ref="def-span"/> useful.
+        </p>
+    </proof>
+
+    <insight>
+    <p>
+        Dimension is a word that invokes geometry.
+        In what ways is this geometric invocation useful and appropriate?
+        Might this geometric concept image lead you astray in certain contexts?
+        In the metaphor of mixture, what does dimension mean?
+    </p>
+    </insight>
+
+   
+
+</section>
+
+
+
+
+
+
+
+

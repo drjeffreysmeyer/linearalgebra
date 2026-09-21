@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Definition</title>
+    <p>
+        In your first course in linear algebra, you worked with <m>\R^n</m>, length <m>n</m> lists of real numbers.
+        We called such lists vectors.
+        We were able to <em>mix</em> vectors, or more precisely, add and scale vectors.
+        These mixing properties allowed us to construct the concepts and tools of matrix algebra over <m>\R</m>: matrix equations, bases, decompositions, eigentheory, and more.
+    </p>
+    <p>
+        We return to <m>\R^n</m> in the context of linear algebra, to perform structural abstraction and give life to an (abstract) vector space over a field.
+    </p>
+    <p>
+        (I am trusting that you are comfortable with the concepts and tools from working with <m>\R^n</m> in your first course in linear algebra.
+        This familiarity provides motivation, intuition, examples, and more generally, a robust concept image for what follows.
+        I encourage you to consult my <em>Concepts of Linear Algebra (COLA)</em> text.
+        Engage with the exposition, play with the GeoGebra manipulatives, and work out the homeworks.)
+    </p>
+    <definition xml:id="def-vectorspace">
+        <title>Vector Space</title>
+        <statement>
+            <p>
+                If <m>F</m> is a field, then a <term>vector space</term> over <m>F</m> is a set <m>V</m> with two maps which we call <term>addition</term> (<m>+</m>) and <term>scaling</term> <m>\cdot</m>:
+            </p>
+            <me>V\times V \to V;\ (\vect{v},\vect{w})\mapsto \vect{v}+\vect{w} \hspace{4pc} F\times V \to V;\ (a,\vect{v})\mapsto a\cdot \vect{v}</me>
+            <p>
+                satisfying:
+            </p>
+            <ol marker="(VS1)">
+                <li>
+                    <p>
+                        Addition is <term>associative</term>:<br/>
+                        If <m>\vect{u},\vect{v},\vect{w}\in V</m>, then <m>(\vect{u}+\vect{v})+\vect{w} = \vect{u}+(\vect{v}+\vect{w})</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Addition has an <term>identity</term> (which we call a <term>zero vector</term>):<br/>
+                        There exists an element <m>\vect{0}_V\in V</m> such that if <m>\vect{v}\in V</m>, then <m>\vect{0}_V+\vect{v} = \vect{v}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Addition has <term>inverses</term>:<br/>
+                        If <m>\vect{v}\in V</m>, then there exists and element <m>\vect{w}\in V</m> such that <m>\vect{v}+\vect{w}=\vect{0}_V</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Addition is <term>commutative</term>:<br/>
+                        If <m>\vect{v},\vect{w}\in V</m>, then <m>\vect{v}+\vect{w} = \vect{w}+\vect{v}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Scaling is <term>associative</term>:<br/>
+                        If <m>a,b\in F</m> and <m>\vect{v}\in V</m>, then <m>a\cdot (b \cdot \vect{v}) = (ab)\cdot \vect{v}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Scaling has an <term>identity</term>:<br/>
+                        If <m>1\in F</m> is the multiplicative identity and <m>\vect{v}\in V</m>, then <m>1\cdot \vect{v} = \vect{v}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Distributivity</term> of scaling 1:<br/>
+                        If <m>a,b\in F</m> and <m>\vect{v}\in V</m>, then <m>(a+b)\cdot \vect{v} = a\cdot \vect{v} + b \cdot \vect{v}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Distributivity</term> of scaling 2:<br/>
+                        If <m>a\in F</m> and <m>\vect{v},\vect{w}\in V</m>, then <m>a \cdot (\vect{v}+\vect{w}) = a\cdot \vect{v} + a \cdot \vect{w}</m>.
+                    </p>
+                </li>
+            </ol>
+            <p>
+                Elements of a vector space are called <term>vectors</term>. Elements of <m>F</m> are called <term>scalars</term>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        To help distinguish vectors from scalars, when writing by hand, I will put an arrow (e.g. <m>\overrightarrow{v}</m>) over each vector, and when <m>\LaTeX</m> ing, I will always use <c>\vect{}</c> for each vector.
+        When <m>V</m> is clear from context, I will write <m>\vect{0}</m> instead of <m>\vect{0}_V</m>.
+    </p>
+
+
+        <definition xml:id="def-linear_combination">
+            <title>Linear Combination</title>
+            <statement>
+                <p>
+                    If <m>S = \{\vect{v}_1,\ldots, \vect{v}_n\}\subset V</m>, then a <term>linear combination</term> of <m>S</m> is an expression of the form
+                </p>
+                <me>x_1\vect{v}_1+\cdots +x_n\vect{v}_n,</me>
+                <p>
+                    where <m>x_1,x_2,\ldots, x_n\in F</m>.
+                </p>
+                <p>
+                    The <term>trivial</term> linear combination is the one with all 0 scalars. Otherwise it is <term>nontrivial</term>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            Note that we only take <em>finite sums</em> in linear combinations.
+        </p>
+
+
+        <insight>
+        <p>
+            Addition is a <em>binary operation</em>, meaning it has two inputs. What does an expression like <m>\vect{u}+\vect{v}+\vect{w}</m> even mean?
+        </p>      
+        </insight>
+
+
+
+</section>

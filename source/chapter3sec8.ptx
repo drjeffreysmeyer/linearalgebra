@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec8" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Matrix Transformations</title>
+    <p>
+        One of the most fundamental concepts of linear algebra is <em>mixture</em> via linear combination.
+        Matrix multiplication is shorthand for linear combinations in <m>F^m</m>.
+    </p>
+    <definition xml:id="def-matrix_multiplication">
+        <title>Matrix Multiplication (Matrix with Vector)</title>
+        <statement>
+            <p>
+                If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset F^m</m>, then the <m>m\times n</m> grid <m>A_S:=[\vect{v}_1| \cdots | \vect{v}_n]</m> is a <term>matrix</term>. The vectors of <m>S</m> form the <term>columns</term> of <m>A_S</m>. Given scalars <m>x_1,\ldots, x_n\in F</m>, <term>matrix multiplication</term> is the linear combination
+            </p>
+            <men>
+                A_S\vect{x}=[\vect{v}_1| \cdots| \vect{v}_n]\begin{bmatrix}x_1\\\vdots \\x_n\end{bmatrix}:=x_1\vect{v}_1+\cdots x_n\vect{v}_n.
+            </men>
+            <p>
+                In other words, multiplication by <m>A_S</m> is the mixture map <m>\Mix_S</m>, i.e. <m>\Mix_S(\vect{x})=A_S\vect{x}</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Matrix multiplication by <m>A_S</m> is precisely a linear combination of the columns of <m>A_S</m>.
+        When the column set <m>S</m> is clear from context, we will often just write <m>A</m>.
+    </p>
+    <definition xml:id="def-matrix_transformation">
+        <title>Matrix Transformation</title>
+        <statement>
+            <p>
+                If a set map <m>T:F^n\to F^m</m> is of the form <m>T(\vect{x}):=A\vect{x}</m> where <m>A</m> is an <m>m\times n</m> matrix with entries in <m>F</m>, then <m>T</m> is a <term>matrix transformation</term> and <m>A</m> is its <term>associated matrix</term>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        We have essentially proved the following result, but it will be useful to have it codified as a proposition that we may refer back to in the future.
+    </p>
+    <proposition xml:id="prop-mixmap_matrix">
+        <title>The mixture map is a matrix transformation</title>
+        <statement>
+            <p>
+                If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset F^m</m> is an ordered set, then the mixture map <m>\Mix_S:F^n\to F^m</m> is a matrix transformation given by matrix multiplication <m>\Mix_S(\vect{x})=A_S\vect{x}</m> where <m>A_S=[\vect{v}_1| \cdots | \vect{v}_n]</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Let the definitions structure your proof.
+            You may find <xref ref="def-matrix_transformation"/>, <xref ref="def-matrix_multiplication"/>, and <xref ref="def-mixturemap"/> useful.
+        </p>
+    </proof>
+    <p>
+        When <m>S=\mathcal{B}</m> is a basis, then in light of <xref ref="prop-mix_and_coord_inverses"/>, we are justified in calling <m>\Mix_\mathcal{B}</m> the coordinate change map sending us <alert>from</alert> <m>\mathcal{B}</m>-coordinates <alert>into</alert> standard coordinates, and <m>A_\mathcal{B}</m> is the associated <alert>coordinate change matrix</alert>.
+    </p>
+    <proposition xml:id="prop-matrix_mult_is_linear">
+        <title>Matrix transformations are linear</title>
+        <statement>
+            <p>
+                If <m>A=[\vect{v}_1| \cdots | \vect{v}_n]</m> is an <m>m\times n</m> matrix with entries in <m>F</m>, then the set map <m>T:F^n\to F^m</m>, <m>T(\vect{x}):=A\vect{x}</m> is a linear map.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            You may find <xref ref="def-mixturemap"/>, <xref ref="def-matrix_multiplication"/>, and <xref ref="prop-mix_map_is_linear"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-matrix_of_comp_is_product">
+        <title>The composition of matrix transformations is a matrix transformation</title>
+        <statement>
+            <p>
+                If <m>T_1:F^n\to F^m</m>, <m>T_1(\vect{x}):=A\vect{x}</m>, and <m>T_2:F^m\to F^p</m>, <m>T_2(\vect{y}):=B\vect{y}</m> are matrix transformations, and <m>A=[\vect{v}_1| \cdots | \vect{v}_n]</m>, then <m>T_2\circ T_1</m> is a matrix transformation with associated matrix <m>BA:=[B\vect{v}_1| \cdots | B\vect{v}_n]</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            It suffices to show that, if <m>\vect{x}\in F^n</m>, then <m>(T_2\circ T_1)(\vect{x})=[B\vect{v}_1| \cdots | B\vect{v}_n]\vect{x}</m> (why???).
+            You may find <xref ref="def-matrix_transformation"/>, <xref ref="def-composition"/>, <xref ref="def-matrix_multiplication"/>, <xref ref="prop-matrix_mult_is_linear"/>, and <xref ref="def-linearmap"/> useful.
+        </p>
+    </proof>
+    <definition xml:id="def-matrix_product">
+        <title>Matrix Multiplication (Matrix with Matrix)</title>
+        <statement>
+            <p>
+                If <m>A=[\vect{v}_1| \cdots | \vect{v}_n]</m> is an <m>m\times n</m> matrix and <m>B</m> is a <m>p\times m</m> matrix, then the matrix <m>BA:=[B\vect{v}_1| \cdots | B\vect{v}_n]</m> is the <term>product</term> of <m>B</m> and <m>A</m>.
+            </p>
+        </statement>
+    </definition>
+
+    <insight>
+        
+    <p>
+        In this investigation, you explored how matrix multiplication <em>means</em> mixture of its column vectors.
+        Most people taking this course will have been told that that matrix multiplication is an algorithm (which I call the pointer-finger algorithm) without reference to meaning.
+        In this reflection, over several paragraphs, think back on your experiences with matrix multiplication and address each of the following prompts.
+    </p>
+    <ol>
+        <li>
+            <p>
+                How did you first learn to perform matrix multiplication?
+            </p>
+        </li>
+        <li>
+            <p>
+                Was matrix multiplication given any sort of meaning at that time?
+            </p>
+        </li>
+        <li>
+            <p>
+                What role do you you think meaning has in enabling you to reason about mathematical objects?
+            </p>
+        </li>
+        <li>
+            <p>
+                How will now understanding matrix multiplication as <em>meaning</em> mixture of its column vectors impact your ability to compute matrix multiplication? Reason about and use matrix multiplication?
+            </p>
+        </li>
+    </ol>
+        </insight>
+
+
+</section>
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec14" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Dimension and Subspaces</title>
+    <proposition xml:id="prop-subspaces_of_fd_are_fd">
+        <title>Subspaces dimension bounds</title>
+        <statement>
+            <p>
+                If <m>V</m> is finite dimensional and <m>W\subset V</m> is a subspace, then <m>W</m> is finite dimensional and <m>\dim W\le \dim V</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof by cases.
+            Case 1: <m>W</m> is the trivial subspace.
+            Case 2: <m>W=V</m> is the whole space.
+            Case 3: <m>W</m> is a nontrivial, proper subspace.
+            Write <m>n=\dim V</m>.
+            Use an iterative procedure to build an increasingly large collection of independent (nonzero) vectors within <m>W</m>.
+            Deduce that this process must terminate within a finite number of steps, at which point the vectors must span <m>W</m>.
+            You may find <xref ref="prop-dependence-prop5"/>, <xref ref="def-finitedimensional"/>, <xref ref="def-dimension"/>, <xref ref="prop-basis2"/>, and <xref ref="thm_ind_less_span"/> useful.
+        </p>
+    </proof>
+
+
+   <insight>
+    <p>
+        Previously, we could only describe subspaces via a property they satisfy.
+        Now you proved in <xref ref="prop-subspaces_of_fd_are_fd"/> finite dimensional subspaces can be described with a basis.
+    </p>
+    <ol>
+        <li>
+            <p>
+                In your own words, internalize and explain the power of this result for <alert>communicating</alert> to others what subspaces are working with.
+            </p>
+        </li>
+        <li>
+            <p>
+                Compare and contrast the two strategies for communicating subspaces: via property vs. via basis? Explain. In which context would each be useful?
+            </p>
+        </li>
+    </ol>
+        </insight>
+
+    <proposition>
+        <title>The vector space of sequences is infinite dimensional</title>
+        <statement>
+            <p>
+                <m>\dim F^\infty = \infty</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            For each <m>n\in \Z_+</m>, find a subspace <m>W_n\subset F^\infty</m> with dimension <m>n</m>.
+            Deduce that, for all <m>n</m>, <m>\dim F^\infty \ge n</m>, and hence <m>\dim F^\infty =\infty</m>.
+            You may find <xref ref="def-vector_space_of_sequences"/>, concepts from <xref ref="ecp-subspaces_generalization"/>, and <xref ref="prop-subspaces_of_fd_are_fd"/> useful.
+        </p>
+    </proof>
+    <definition xml:id="def-basis_extension">
+        <title>Extending to a Basis</title>
+        <statement>
+            <p>
+                If <m>V</m> is finite dimensional and <m>S\subset V</m> is independent, then any process of including additional vectors (via say <xref ref="prop-dependence-prop5"/>) to obtain a basis containing <m>S</m> is called <term>extending <m>S</m> to a basis</term>.
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="thm-subspace_dimension_formula">
+        <title>Subspace sum dimension formula</title>
+        <statement>
+            <p>
+                If <m>V</m> is a finite dimensional vector space with subspaces <m>W_1, W_2\subset V</m> such that <m>V=W_1+W_2</m>, then
+            </p>
+            <me>\dim V=\dim W_1+\dim W_2 - \dim (W_1\cap W_2).</me>
+        </statement>
+    </theorem>
+    <proof>
+        <p>
+            Try a direct proof.
+            <m>W_1\cap W_2</m> is a finite dimensional subspace (why???).
+            Start with a basis <m>S_0</m> for <m>W_1\cap W_2</m>.
+            Extend <m>S_0</m> to a basis for <m>W_1</m>: <m>S_0\cup S_1</m> (how???).
+            Also extend <m>S_0</m> to a basis for <m>W_2</m>: <m>S_0\cup S_2</m>.
+            Show that <m>\mathcal{B}:=S_0\cup S_1\cup S_2</m> is a basis for <m>V</m>.
+            What is the size of <m>\mathcal{B}</m>?
+            You may find <xref ref="prop-subspaces_of_fd_are_fd"/>, <xref ref="prop-ss-intersections_two"/>, <xref ref="def-subspace_sums"/>, <xref ref="def-basis_extension"/>, <xref ref="def-basis"/>, <xref ref="def-spanning"/>, <xref ref="def-dependence"/>, and <xref ref="prop-dependence-prop5"/> useful.
+        </p>
+    </proof>
+
+
+</section>
+
+
+
+
+
+
+
+

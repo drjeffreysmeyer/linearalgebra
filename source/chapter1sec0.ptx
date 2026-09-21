@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp1sec0" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Definition and Examples</title>
+    <p>
+        A fundamental mathematical action is <alert>structural abstraction</alert>, in which we take a <em>specific</em> object within a <em>specific</em> context, observe its meaningful structures, and then construct an abstract object endowed with these structures, no more and no less. We then may mentally act upon this new abstract object, bringing it to life as a new mathematical entity, of which our original object is now a mere example.
+    </p>
+    <p>
+        In your first course in linear algebra, you probably worked almost exclusively with real numbers <m>\R</m>, with perhaps a quick diversion to complex numbers <m>\C</m> at the end. Linear algebra worked well over <m>\R</m> and <m>\C</m> due to specific structures they possess. We now perform structural abstraction on <m>\R</m> within the context of our first course in linear algebra, and bring to life a field.
+    </p>
+    <definition xml:id="def-field">
+        <title>Field</title>
+        <statement>
+            <p>
+                A <term>field</term> is a set <m>F</m> with two operations, <term>addition</term> and <term>multiplication</term>:
+            </p>
+            <me>F\times F \to F;\ (a,b)\mapsto a+b \hspace{4pc} F\times F \to F;\ (a,b)\mapsto a b</me>
+            <p>
+                satisfying:
+            </p>
+            <ol marker="(F1)">
+                <li>
+                    <p>
+                        Addition and multiplication are <term>associative</term>:<br/>
+                        If <m>a,b,c \in F</m>, then <m>(a+b)+c=a+(b+c)</m> and <m>(ab)c=a(bc)</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        There exist additive and multiplicative <term>identities</term>:<br/>
+                        There exists an element <m>0\in F</m> such that if <m>a\in F</m>, then <m>0+a=a</m>.<br/>
+                        There exists an element <m>1\in F^\times := F-\{0\}</m> such that if <m>a\in F^\times</m>, then <m>1a=a</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        There exist additive and multiplicative <term>inverses</term>:<br/>
+                        If <m>a\in F</m>, then there exists an element <m>b\in F</m> such that <m>a+(b)=0</m>.<br/>
+                        If <m>a\in F^\times</m>, then there exists an element <m>b\in F^\times</m> such that <m>ab=1</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Addition and multiplication are <term>commutative</term>:<br/>
+                        If <m>a,b \in F</m>, then <m>a+b=b+a</m> and <m>ab=ba</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Addition and multiplication are tied together with <term>distributivity</term>:<br/>
+                        If <m>a,b,c \in F</m>, then <m>a(b+c)=ab+ac</m>.
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </definition>
+    <p>
+        I will reserve the symbol <m>F</m> for a field.
+    </p>
+
+        <p>
+            An essential mathematical mental action is the construction and use of examples. The examples are to be stored in our mental library to be accessed frequently, for example, when making and assessing conjectures and constructing proofs.
+        </p>
+        <example>
+            <title>Library of Fields</title>
+            <statement>
+                <p>
+                    Here is a list of many fields.  The fact that they are fields will not be proven here, and some require techniques outside of the scope of this text.  Rather, these examples are the be kept in our mental library of fields, to be accessed frequently, for example, when making and assessing conjectures and constructing proofs.
+                    <ol>
+                        <li>
+                            <p>
+                                The set of <term>real numbers</term> <m>\R</m> with the usual addition and multiplication.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The set of <term>complex numbers</term> are what we adjoin the square root of -1, symbolized as <m>i</m>, to the real numbers.   More formally, <me>\C = \{a + bi \mid a,b \in \R\}</me> with the addition addition and multiplication given by
+                                <md>
+                                    <mrow>(a+bi)+(c+di)\amp =(a+c)+(b+d)i </mrow>
+                                    <mrow>(a+bi)(c+di)\amp =(ac-bd)+(ad+bc)i</mrow>
+                                </md>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The set of <term>rational numbers</term> <m>\Q</m> with the usual addition and multiplication.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The set of <term>quadratic extensions</term> of the rationals are what get when we adjoin the square root of some non-square integer to the rational numbers.   This process is very similar to forming the complex number from the real numbers.   More formally, if <m>n</m> is a non-square integer, then <me>\Q(\sqrt{n}) = \{a + b\sqrt{n} \mid a,b \in \Q\}</me> with the addition and multiplication given by
+                                <md>
+                                    <mrow>(a+b\sqrt{n})+(c+d\sqrt{n})\amp =(a+c)+(b+d)\sqrt{n} </mrow>
+                                    <mrow>(a+b\sqrt{n})(c+d\sqrt{n})\amp =(ac+bdn)+(ad+bc)\sqrt{n}</mrow>
+                                </md>
+
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The set of integers modulo a prime <m>p</m>, denoted <m>\Z/p\Z</m> or <m>\F_p</m>, with addition and multiplication defined modulo <m>p</m>.  (The fact that these are fields are a standard result from number theory courses.)  These are instances of <term>finite fields</term>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The set of <term>rational functions</term> with coefficients in a field <m>F</m>, denoted <m>F(x)</m>, with the usual addition and multiplication of rational functions.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </example>
+
+</section>

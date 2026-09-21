@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec11" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+    <title>Cardinality and Infinity</title>
+    <p>
+        In this investigation, you will explore notions of finite and the infinite, and practice proof by contradiction.
+    </p>
+    <p>
+        We take as given the set of integers, denoted <m>\Z</m> and we will let <m>\Z_+</m> denote the set of all <em>positive</em> integers (i.e. <m>\{1,2,3,\ldots\}</m>).
+        The set of all positive integers between and including <m>1</m> and <m>n</m> is <m>\{1,2,\ldots, n\}</m>.
+        We also take as given the basic rules of arithmetic (addition and multiplication) in <m>\Z</m>.
+    </p>
+    <definition xml:id="def-cardinality">
+        <title>Cardinality and Finite</title>
+        <statement>
+            <p>
+                If <m>n\in\Z_+</m>, then a set <m>X</m> has <term>cardinality</term> <m>n</m> if there exists a bijection <m>f:X\to \{1,2,\ldots, n\}</m>. If such an <m>n</m> exists, <m>X</m> is <term>finite</term> and we write <m>|X|=n</m>.
+                If no such bijection exists for any <m>n\in\Z_+</m>, then <m>X</m> is <term>infinite</term>.
+            </p>
+        </statement>
+    </definition>
+    <proposition>
+        <statement>
+            <p>
+                If <m>n\in \Z_+</m>, then <m>\{0,1\}^n</m> (i.e. <m>n</m>-tuples of 0's and 1's) is finite and <m>|\{0,1\}^n|=2^n</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Construct a bijection of <m>\{0,1\}^n</m> with <m>\{1,2, \ldots 2^n\}</m>.
+            Think binary!
+            Perhaps start by thinking about <m>n=2</m>.
+            Think about where you might send <m>(0,0)</m>? <m>(1,0)</m>? <m>(0,1)</m>? <m>(1,1)</m>?
+            Can you generalize?
+            Be sure to verify the map you constructed is a bijection.
+            You may find <xref ref="def-cardinality"/> and <xref ref="cor-sets-bijection_inverse"/> helpful.
+        </p>
+    </proof>
+    <definition xml:id="Def-infinites">
+        <title>Countably Infinite and Uncountable</title>
+        <statement>
+            <p>
+                An infinite set <m>X</m> is <term>countably infinite</term> if the exists a bijection <m>f:X\to \Z_+</m>.
+                If no such bijection exists, then <m>X</m> is <term>uncountable</term>.
+                A set which is finite or countably infinite is <term>countable</term>.
+            </p>
+        </statement>
+    </definition>
+    <proposition>
+        <title>The integers are countable</title>
+        <statement>
+            <p>
+                <m>\Z</m> is countably infinite.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Construct a bijection of <m>\Z</m> with <m>\Z_+</m>.
+            Divide and conquer. Where might you send positive integers? Negative integers?
+            Be sure to verify the map you constructed is a bijection.
+            You may find <xref ref="Def-infinites"/> and <xref ref="cor-sets-bijection_inverse"/> helpful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-01Zuncountable">
+        <title>The set of infinite sequences of 0's and 1's is uncountable</title>
+        <statement>
+            <p>
+                <m>\{0,1\}^{\Z_+}</m> is uncountable.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a proof by contradiction.
+            Suppose that there <alert>does</alert> exist a bijection <m>f:\{0,1\}^{\Z_+}\to \Z_+</m>.
+            Then you can write down these sequences in <q>order</q> i.e. <m>S_1, S_2, S_3, \ldots</m> (Why?)
+            Try to construct a sequence <m>S</m> in <m>\{0,1\}^{\Z_+}</m> that is not in your list (i.e. <m>S\ne S_1</m>, <m>S\ne S_2</m>, <m>S\ne S_3</m>, <m>\ldots</m>).
+            Try to build <m>S</m> by looking at the first entry of <m>S_1</m>, the second entry of <m>S_2</m>, and more generally, the <m>n^{\text{th}}</m> entry of <m>S_n</m>.
+            Be sure to carefully show <m>S</m> cannot be on your list.
+            Deduce a contradiction and conclude no such bijection <m>f</m> exists.
+        </p>
+    </proof>
+    <definition xml:id="Def-powerset">
+        <title>Power Set</title>
+        <statement>
+            <p>
+                If <m>X</m> is a set, the <term>power set</term> of <m>X</m>, denoted <m>\mathcal{P}(X)</m>, is the set of all subsets of <m>X</m>. In symbols, <m>\mathcal{P}(X) = \{Y \ | \ Y\subset X\}</m>.
+            </p>
+        </statement>
+    </definition>
+    <proposition>
+        <title>The power set of the positive integers is uncountable</title>
+        <statement>
+            <p>
+                <m>\mathcal{P}(\Z_+)</m> is uncountable.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Using the idea of inclusion and exclusion, carefully construct a bijection between <m>\mathcal{P}(\Z_+)</m> and a known uncountable set.
+            You may find <xref ref="Def-powerset"/> and <xref ref="prop-01Zuncountable"/> helpful.
+        </p>
+    </proof>
+
+   
+
+</section>
+
+
+
+
+
+
+
+

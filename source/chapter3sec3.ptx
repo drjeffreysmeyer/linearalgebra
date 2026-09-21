@@ -1,169 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="chp3sec3" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Relatively Prime Diagonal Grid</title>
 
-  <p> </p>
-  
-  <definition xml:id="definition-relatively_prime_diagonal_grid">
-    <title>The Relatively Prime Diagonal Grid</title>
-    <statement>
+        <title>Injective Linear Maps and Independence</title>
+        <proposition>
+            <title><m>S</m> is independent iff the mixture map is injective</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a vector space over <m>F</m> and <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset V-\{\vect{0}\}</m>, then <m>S</m> is independent if and only if the mixture map <m>\Mix_S:F^n\to V</m> is injective.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. You will need to show both implications. First, suppose <m>S</m> is independent and suppose there exist <m>\vect{x},\vect{y}\in F^n</m> such that <m>\Mix_S(\vect{x})=\Mix_S(\vect{y})</m>. Analyze <m>\Mix_S(\vect{x})-\Mix_S(\vect{y})</m>. What can you then deduce? Next suppose <m>\Mix_S</m> is injective. Suppose there exists <m>x_1,\ldots x_n\in F</m> such that <m>x_1\vect{v}_1+\cdots +x_n\vect{v}_n=\vect{0}</m>. Can you reformulate this in terms of <m>\Mix_S</m>? What can you then deduce? You might also find <xref ref="def-mixturemap"/>, <xref ref="def-dependence"/>, <xref ref="Def-inj_sur_bij"/>, <xref ref="def-linearmap"/>, <xref ref="def-vectorspace"/>, <xref ref="prop-mix_map_is_linear"/>, and <xref ref="prop_lin_map_zero"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop_image_of_indpendent">
+            <title>The image of an independent set is independent</title>
+            <statement>
+                <p>
+                    If <m>T:V\to W</m> is an injective linear map and <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset V-\{\vect{0}\}</m> is a linearly independent set, then <m>T(S):=\{T(\vect{v}_1),\ldots, T(\vect{v}_n)\}\subset W</m> is a linearly independent set.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. Suppose that there exists <m>x_1,\ldots, x_n\in F</m> such that <m>x_1T(\vect{v}_1)+\cdots+x_nT(\vect{v}_n)=\vect{0}_W</m>. What can you deduce about the <m>x_i</m>'s? You might also find <xref ref="def-dependence"/>, <xref ref="Def-inj_sur_bij"/>, <xref ref="def-linearmap"/>, <xref ref="def-vectorspace"/>, and <xref ref="prop_lin_map_zero"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop-injective_kernel">
+            <title>A map is injective iff its kernel is trivial</title>
+            <statement>
+                <p>
+                    If <m>T:V\to W</m> is a linear map, then <m>T</m> is injective if and only if <m>\mathrm{ker}(T)=\{\vect{0}\}</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. You will need to show both implications. Start by supposing <m>T</m> is injective. Pick <m>\vect{v}\in \ker (T)</m>. Deduce <m>\vect{v}=\vect{0}</m> (why???). Next suppose <m>\mathrm{ker}(T)=\{\vect{0}\}</m>. Pick <m>\vect{v},\vect{w}\in V</m> such that <m>T(\vect{v})=T(\vect{w})</m>. Analyze <m>T(\vect{v})-T(\vect{w})</m>. Deduce <m>\vect{v}=\vect{w}</m> (how???). You might also find <xref ref="def-dependence"/>, <xref ref="Def-inj_sur_bij"/>, <xref ref="def-linearmap"/>, and <xref ref="prop_lin_map_zero"/> useful.
+            </p>
+        </proof>
+
+
+        <insight>
         <p>
-            If integers <m>m</m> and <m>n</m> are relatively prime and greater than 1, then the <term>relatively prime diagonal grid</term> (RPDG) is the <m>m</m> by <m>n</m> grid of least residues modulo <m>mn</m> written sequentially diagonally down and to the right, where you loop upon hitting and edge.  In symbols, the least residue <m>k\in\{0,1,\ldots,mn-1\}</m> will be placed in row <m>i\equiv k\pmod m</m> and column <m>j\equiv k\pmod n</m>.
+            Let <m>S=\{\vect{v}_1,\ldots,\vect{v}_n\} \subset V-\{\vect{0}\}</m>. Using the metaphor of mixtures, the domain <m>F^n</m> of the mixture map <m>\Mix_S</m> is the collection of all possible servings for our vectors in <m>S</m>. In the language of mixtures, and referencing the propositions above as appropriate, clearly explain how <m>\ker(\Mix_S)</m> encodes the dependency of <m>S</m>. Be sure to use proper mathematical language and notation. In what ways does this symbolism clarify your thinking? In what ways does it add confusion?
         </p>
-    </statement>
-  </definition>
+        </insight>
 
-  <p>For example, the relatively prime diagonal grid for <m>m=2</m> and <m>n=3</m> is:</p>
-
-  <tabular bottom="minor" top="minor" left="minor" right="minor">
-  <row bottom="minor">
-    <cell right="minor">0</cell>
-    <cell>4</cell>
-    <cell>2</cell>
-  </row>
-  <row>
-    <cell right="minor"
-    >3</cell>
-    <cell>1</cell>
-    <cell>5</cell>
-  </row>
-</tabular>
-
-<p>The relatively prime diagonal grid for <m>m=6</m> and <m>n=7</m> is:</p>
-
-<tabular halign="center" top="minor" left="minor" bottom="minor" right="minor">
-    <row bottom="minor">
-        <cell right="minor">0</cell>
-        <cell right="minor">36</cell>
-        <cell right="minor">30</cell>
-        <cell right="minor">24</cell>
-        <cell right="minor">18</cell>
-        <cell right="minor">12</cell>
-        <cell right="minor">6</cell>
-    </row>
-    <row bottom="minor">
-        <cell right="minor">7</cell>
-        <cell right="minor">1</cell>
-        <cell right="minor">37</cell>
-        <cell right="minor">31</cell>
-        <cell right="minor">25</cell>
-        <cell right="minor">19</cell>
-        <cell right="minor">13</cell>
-    </row>
-    <row bottom="minor">
-        <cell right="minor">14</cell>
-        <cell right="minor">8</cell>
-        <cell right="minor">2</cell>
-        <cell right="minor">38</cell>
-        <cell right="minor">32</cell>
-        <cell right="minor">26</cell>
-        <cell right="minor">20</cell>
-    </row>
-    <row bottom="minor">
-        <cell right="minor">21</cell>
-        <cell right="minor">15</cell>
-        <cell right="minor">9</cell>
-        <cell right="minor">3</cell>
-        <cell right="minor">39</cell>
-        <cell right="minor">33</cell>
-        <cell right="minor">27</cell>
-    </row>
-    <row bottom="minor">
-        <cell right="minor">28</cell>
-        <cell right="minor">22</cell>
-        <cell right="minor">16</cell>
-        <cell right="minor">10</cell>
-        <cell right="minor">4</cell>
-        <cell right="minor">40</cell>
-        <cell right="minor">34</cell>
-    </row>
-    <row bottom="minor">
-        <cell right="minor">35</cell>
-        <cell right="minor">29</cell>
-        <cell right="minor">23</cell>
-        <cell right="minor">17</cell>
-        <cell right="minor">11</cell>
-        <cell right="minor">5</cell>
-        <cell right="minor">41</cell>
-    </row>
-</tabular>
-
-    <activity>
-		<title>Create the Relatively Prime Diagonal Grid</title>
-		<p>
-			Create the relatively prime diagonal grid for <m>m=4</m> and <m>n=5</m>.  What patterns do you see? Can you find a pattern in the columns and rows?
-		</p>
-
-    <p>
-			Try to create a similar grid for <m>m=3</m> and <m>n=6</m>.  What goes wrong?  Why do you think the condition of relatively prime is necessary?  
-		</p>
-  </activity>
-
-   <proposition xml:id="proposition-columns_and_rows_of_relatively_prime_diagonal_grid">
-  <title>Congruence classes of the RPDG columns and rows</title>
-  <statement>
-    <p>
-      If <m>m,n\in \Z</m> are integers greater than 1 and <m>m</m> and <m>n</m> are relatively prime, then the elements of a column are all congruent modulo <m>n</m> and the elements of a row are all congruent modulo <m>m</m>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      Try a direct proof.  This is a straightforward application of the definition of the RPDG and the properties of congruence.  Let <m>c</m> be an element in a column.  Why are all the elements in that column congruent to <m>c</m> modulo <m>n</m>?  Next let <m>r</m> be an element in a row.  Why are all the elements in that row congruent to <m>r</m> modulo <m>m</m>?  You may find  <xref ref="definition-congruence"/>, <xref ref="definition-relatively_prime_diagonal_grid"/>, and <xref ref="definition-least_residue"/> useful.
-    </p>
-  </proof>
-</proposition> 
-
-<p>
-  As is often the case, there are many useful propositions and we only prove a subset of them when we first introduce a new concept.  The following propositions we could have proven a couple sections ago, but we waited until now to state them as they are now useful in the subsequent proof. 
-</p>
-
- <proposition xml:id="proposition-relatively_prime_euclid_lemma">
-  <title>A relatively prime Euclid's Lemma</title>
-  <statement>
-    <p>
-      If <m>m,n, k \in \Z</m> are positive integers and <m>m</m> and <m>n</m> are relatively prime, such that <m>m</m> divides <m>kn</m>, then <m>m</m> divides <m>k</m>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      Is there a similar proof whose strategy you might be able to leverage?  You may find <xref ref="proposition-euclid_lemma"/> useful.
-    </p>
-  </proof>
-</proposition> 
-
-
- <proposition xml:id="proposition-relatively_prime_product_divides">
-  <title>If relatively prime integers divide, their product divides</title>
-  <statement>
-    <p>
-      If <m>m,n, c \in \Z</m> are integers greater than 1 and <m>m</m> and <m>n</m> are relatively prime, such that <m>m</m> divides <m>c</m> and <m>n</m> divides <m>c</m>, then <m>mn</m> divides <m>c</m>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      Try a direct proof.  There exists a constant <m>k</m> such that <m>c = kn</m>.  Then <m>m</m> divides <m>k</m> (why???).  Deduce <m>mn</m> divides <m>c</m>.  You may find  <xref ref="proposition-relatively_prime_euclid_lemma"/>, <xref ref="definition-relatively_prime"/>, and <xref ref="definition-divisibility"/> useful.
-    </p>
-  </proof>
-</proposition> 
-
- <proposition xml:id="proposition-relatively_prime_diagonal_grid_is_filled">
-  <title>The relatively prime diagonal grid is filled</title>
-  <statement>
-    <p>
-      If <m>m</m> and <m>n</m> are relatively prime integers greater than 1, then each spot in the relatively prime diagonal grid is filled with precisely one least residue modulo <m>mn</m>.
-    </p>
-  </statement>
-  <proof>
-    <p>
-      Try a direct proof.  Suppose some spot in the grid is filled with two least residues modulo <m>mn</m>, say <m>a</m> and <m>b</m>.  What does it mean that they are in the same column?  What does it mean they are in the same row?  Once you know that no spot can be filled with more than one least residue, compare the number of least residues modulo <m>mn</m> with the number of spots in the grid and conclude that the grid is filled (why???).  You may find  <xref ref="definition-relatively_prime_diagonal_grid"/>, <xref ref="definition-congruence"/>, <xref ref="definition-least_residue"/>,  <xref ref="proposition-relatively_prime_product_divides"/>, and <xref ref="proposition-congruence_and_least_residue"/> useful.
-    </p>
-  </proof>
-</proposition> 
-
-
-
-
-
- 
 </section>
+
+
+
+
+
+
+
+

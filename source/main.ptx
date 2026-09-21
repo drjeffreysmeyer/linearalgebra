@@ -4,16 +4,18 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="Constructing_Number_Theory">
-    <title>Constructing Lie Groups</title>
+  <book xml:id="Constructing_Linear_Algebra">
+    <title>Constructing Linear Algebra</title>
     <subtitle>An Investigative Approach</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
+    <xi:include href="./chapter0.ptx" />
     <xi:include href="./chapter1.ptx" />
     <xi:include href="./chapter2.ptx" />
+    <xi:include href="./chapter3.ptx" />
 
 
     <!-- Include backmatter -->

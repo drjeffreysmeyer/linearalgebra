@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec5" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+        <title>The Rank-Nullity Theorem</title>
+        <p>
+            Think back to your first course on linear algebra. You likely would have spent a bit of time analyzing the column space and null space of matrices. In particular, given a matrix <m>A</m>, you could read off basis vectors for <m>\Col(A)</m> by identifying the pivot columns of <m>\rref(A)</m> and you could read off the basis vectors for <m>\Null(A)</m> by identifying the nonpivot columns of <m>\rref(A)</m>. An immediate consequence of this is that the number of columns of <m>A</m> is equal to the dimension of the column space plus the dimension of the null space. It is this observation that we formalize with the famous Rank-Nullity Theorem.
+        </p>
+        <definition xml:id="def-rank_and_nullity">
+            <title>Nullity and Rank</title>
+            <statement>
+                <p>
+                    If <m>V</m> and <m>W</m> are finite dimensional vector spaces and <m>T:V\to W</m> is a linear map, then the <term>nullity</term> of <m>T</m> is the dimension of the kernel <m>\mathrm{ker}(T)</m> and the <term>rank</term> of <m>T</m> is the dimension of the image <m>T(V)</m>.
+                </p>
+            </statement>
+        </definition>
+        <theorem>
+            <title>Rank-Nullity Theorem</title>
+            <statement>
+                <p>
+                    If <m>V</m> and <m>W</m> are finite dimensional vector spaces and <m>T:V\to W</m> is a linear map, then
+                </p>
+                <men xml:id="eq-rank_nullity">\dim V=\dim T(V)+\dim \mathrm{ker}(T).</men>
+            </statement>
+        </theorem>
+        <proof>
+            <p>
+                Try a direct proof. Your proof sketch may be aided with some bubble diagrams. Let <m>S_1=\{\vect{u}_1,\ldots ,\vect{u}_r\}</m> be a basis for <m>\mathrm{ker}(T)</m> (why does it exists???). Let <m>S_2=\{\vect{w}_1,\ldots ,\vect{w}_s\}</m> be a basis for <m>T(V)</m> (why does it exists???). For each <m>\vect{w}_i\in S_2</m>, pick some <m>\vect{v}_i\in V</m> such that <m>T(\vect{v}_i)=\vect{w}_i</m> (why does this exist???). Let <m>S_3=\{\vect{v}_1,\ldots ,\vect{v}_s\}</m>.
+            </p>
+            <p>
+                Show that <m>S_1\cup S_3</m> is independent. Suppose <m>y_1,\ldots, y_r, x_1,\ldots, x_s\in F</m> are such that <m>y_1\vect{u}_1+\cdots + y_s\vect{u}_r+ x_1\vect{v}_1+\cdots + x_s\vect{v}_s = \vect{0}</m>. Start by applying <m>T</m> to both sides. Eventually deduce all <m>y_1,\ldots, y_r, x_1,\ldots, x_s</m> are zero.
+            </p>
+            <p>
+                Show that <m>S_1\cup S_3</m> spans <m>V</m>. If <m>\vect{a}\in V</m>, then there exists <m>x_1,\ldots, x_s\in F</m> such that <m>T(\vect{a})=x_1\vect{w}_1+\cdots + x_s\vect{w}_s</m>, (why???) and then deduce that, if <m>\vect{b}:=x_1\vect{v}_1+\cdots + x_s\vect{v}_s</m>, then <m>\vect{a}-\vect{b}\in \mathrm{ker}(T)</m>.
+            </p>
+            <p>
+                Deduce that <m>S_1\cup S_3</m> is a basis for <m>V</m>. Deduce Equation <xref ref="eq-rank_nullity"/>. You may find <xref ref="def-image"/>, <xref ref="prop-image_is_subspace"/>, <xref ref="def-kernel"/>, <xref ref="cor-kernel_is_subspace"/>, <xref ref="prop-subspaces_of_fd_are_fd"/>, <xref ref="def-dimension"/>, <xref ref="def-basis"/>, <xref ref="prop_lin_map_zero"/>, <xref ref="def-dependence"/>, <xref ref="def-spanning"/>, and <xref ref="def-linearmap"/> useful.
+            </p>
+        </proof>
+
+
+</section>
+
+
+
+
+
+
+
+

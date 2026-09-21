@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec9" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>The Redundancy Reduction Algorithm</title>
+    <p>
+        In this investigation you prove the most significant and sophisticated result yet - the Redundancy Reduction Algorithm.
+    </p>
+    <theorem xml:id="thm-rra">
+        <title>Redundancy Reduction Algorithm (RRA)</title>
+        <statement>
+            <p>
+                If <m>S=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset V-\{\vect{0}\}</m>, and <m>S</m> is dependent, then there exists a <m>j>1</m> such that
+            </p>
+            <me>\spn(\{\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_{j-1}\}) =\spn(\{\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_{j-1},\vect{v}_{j}\})</me>
+            <p>
+                and it follows then that <m>\spn(S) = \spn(S-\vect{v}_j)</m>.
+                Furthermore, <m>j</m> may be taken to be the first index for which <m>\{\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_{j-1}\}</m> is independent but <m>\{\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_{j-1},\vect{v}_{j}\}</m> is dependent.
+            </p>
+        </statement>
+    </theorem>
+    <proof>
+        <p>
+            Try a direct proof.
+            For simplicity of notation, for each index <m>i</m>, <m>1\le i\le n</m>, let <m>S_i</m> denote the subset <m>\{\vect{v}_1,\vect{v}_2,\ldots,\vect{v}_{i}\}\subset S</m>.
+            Observe <m>S_1\subset S_2\subset \cdots \subset S_n=S</m>.
+        </p>
+        <p>
+            Note that <m>S_1</m> is independent (why?) and <m>S_n</m> is dependent (why?).
+        </p>
+        <p>
+            Let <m>j</m> be the first index such that <m>S_{j-1}</m> is independent but <m>S_j</m> is dependent. (Why does such a <m>j</m> exists?)
+        </p>
+        <p>
+            Show that <m>\spn(S_{j-1})=\spn(S_{j})</m> via both inclusions.
+            The inclusion <m>\spn(S_{j-1})\subset\spn(S_{j})</m> is immediate (why?).
+            Show the opposite inclusion reduces to showing <m>\vect{v}_j\in \spn(S_{j-1})</m> (why?).
+            You may find <xref ref="def-dependence"/>, <xref ref="def-span"/>, and <xref ref="prop-dependence-increasing_independence2"/> useful.
+        </p>
+    </proof>
+    <corollary>
+        <title>Every finite set can be reduced to an independent set with the same span</title>
+        <statement>
+            <p>
+                If <m>V</m> is a vector space and <m>S\subset V-\{\vect{0}\}</m> is a finite subset, then there exists an independent subset <m>S_0\subset S</m> such that <m>\spn(S_0)=\spn(S)</m>.
+            </p>
+        </statement>
+    </corollary>
+    <proof>
+        <p>
+            Try a direct proof. Iterate the Redundancy Reduction Algorithm (Theorem <xref ref="thm-rra"/>).
+        </p>
+    </proof>
+    <p>
+        Observe that you have described an explicit process for removing all redundancy from finite sets of vectors, while preserving the set of all possible mixtures!
+    </p>
+
+    <insight>   
+    <p>
+        An <url href="https://en.wikipedia.org/wiki/Algorithm">algorithm</url> is a finite sequence of well-defined instructions to perform a computation.
+        Algorithms are powerful because they are easily programed and implemented by computers.
+        Think back on your past courses and experiences.
+        What other algorithms have you encountered?
+        What problems did they solve?
+        Explain why algorithms are often better to program and have a computer run than to implement by hand.
+    </p>
+</insight>
+
+</section>
+
+
+
+
+
+
+
+

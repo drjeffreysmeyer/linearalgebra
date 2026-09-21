@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec6" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+        <title>Sameness and Isomorphism</title>
+        <p>
+            What does it mean for vector spaces to be the <q>same?</q>
+        </p>
+        <definition xml:id="def-isomorphism">
+            <title>Isomorphism</title>
+            <statement>
+                <p>
+                    If <m>V</m> and <m>W</m> are vector spaces and there exists linear maps <m>T:V\to W</m> and <m>T':W\to V</m> such that <m>T\circ T'=\id_{W}</m> and <m>T'\circ T=\id_{V}</m>, then <m>T</m> is a <term>linear isomorphism</term><footnote><p>Isomorphism is a word used throughout mathematics in different contexts. The word linear clarifies the type of isomorphism. However, in this course, since all isomorphisms will be linear, I will often just say <q>isomorphism.</q></p></footnote> and <m>V</m> and <m>W</m> are said to be <term>isomorphic</term>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            Note that <em>a priori</em>, an isomorphism is stronger than a linear bijection. (Why?) In other contexts, this is the case, for example in topology, there exists continuous bijections that are not continuous isomorphisms.
+        </p>
+        <proposition>
+            <title>A linear bijection is an isomorphism</title>
+            <statement>
+                <p>
+                    If <m>T:V_1\to V_2</m> is a linear bijection, then it is a linear isomorphism.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. There exists a <em>set map</em> <m>T':V_2\to V_1</m> such that <m>T\circ T'=\id_{V_2}</m> and <m>T'\circ T=\id_{V_1}</m> (why???). It suffices to show that the set map <m>T'</m> is linear (why???). You might find <xref ref="def-isomorphism"/>, <xref ref="def-linearmap"/>, <xref ref="cor-sets-bijection_inverse"/>, and <xref ref="Def-inj_sur_bij"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop-iso_preserves_basis">
+            <title>Isomorphisms send bases to bases</title>
+            <statement>
+                <p>
+                    If <m>\mathcal{B}=\{\vect{v}_1,\ldots, \vect{v}_n\}\subset V</m> is a basis for <m>V</m>, and <m>T:V\to W</m> is an isomorphism, then the image of <m>\mathcal{B}</m>, <m>T(\mathcal{B})=\{T(\vect{v}_1),\ldots, T(\vect{v}_n)\}</m>, is a basis for <m>W</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. You may find <xref ref="def-basis"/>, <xref ref="def-dependence"/>, <xref ref="def-spanning"/>, <xref ref="def-linearmap"/>, <xref ref="def-isomorphism"/>, <xref ref="prop_image_of_indpendent"/>, and <xref ref="cor-sets-bijection_inverse"/> useful.
+            </p>
+        </proof>
+        <corollary>
+            <title>Isomorphic vector spaces have the same dimension</title>
+            <statement>
+                <p>
+                    If <m>V</m> and <m>W</m> are isomorphic vector spaces, then <m>\dim V= \dim W</m>.
+                </p>
+            </statement>
+        </corollary>
+        <proof>
+            <p>
+                Try a direct proof. You may find <xref ref="def-isomorphism"/>, <xref ref="def-basis"/>, <xref ref="def-dimension"/>, and <xref ref="prop-iso_preserves_basis"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop-fd_injective_selfmap_iso">
+            <title>Injective linear self maps of finite dimensional vector spaces are isomorphisms</title>
+            <statement>
+                <p>
+                    If <m>V</m> is finite dimensional and <m>T:V\to V</m> is an injective linear map, then it is an isomorphism.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof. Deduce that <m>T</m> is surjective. You may find <xref ref="def-basis"/>, <xref ref="def-dimension"/>, <xref ref="prop_image_of_indpendent"/>, <xref ref="prop-basis2"/>, <xref ref="prop-basis-lincomb_exists_unique"/>, <xref ref="def-linearmap"/>, and <xref ref="def-isomorphism"/> useful.
+            </p>
+        </proof>
+
+
+        <insight>
+            <title>The distinction between equal and the "same"</title>
+            
+            
+        <p>
+            Isomorphic vector spaces are morally the <q>same,</q> but not necessarily equal, vector spaces.
+        </p>
+        <ol>
+            <li>
+                <p>In your own words, internalize and explain the distinction between equal and isomorphic.</p>
+            </li>
+            <li>
+                <p>In what other contexts have you seen similar results (e.g. triangles in Euclidean geometry)?</p>
+            </li>
+            <li>
+                <p>In what ways might you say these kinds of results, in which you identify relevant similarities between two objects and disregard other differences, are problem solving strategies? Explain.</p>
+            </li>
+        </ol>
+                </insight>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+

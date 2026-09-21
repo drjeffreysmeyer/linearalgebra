@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec8" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Redundancy and Dependence</title>
+    <p>
+        In this investigation, we formalize the concept of redundancy.
+    </p>
+    <definition xml:id="def-dependence">
+        <title>Linearly Dependent and Linearly Independent</title>
+        <statement>
+            <p>
+                If <m>V</m> is a vector space over <m>F</m> and <m>S\subset V-\{\vect{0}\}</m> is nonempty, then the collection is <term>linearly dependent</term> if there exists a <em>nontrivial</em> linear combination of vectors in <m>S</m> to obtain the zero vector.
+                In symbols, <m>S</m> is dependent if there exists <m>\vect{v}_1,\ldots, \vect{v}_n\in S</m>, <m>x_1,\ldots,x_n\in F</m>, not all of which are zero, such that
+            </p>
+            <me>x_1\vect{v}_1+\cdots x_n\vect{v}_n=\vect{0}.</me>
+            <p>
+                If the <em>only</em> way to produce the zero vector is via the <em>trivial</em> linear combination, then <m>S</m> is <term>linearly independent</term>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        In the context of linear algebra, we often just omit the word <q>linearly</q> and just say <q>dependent</q> or <q>independent</q>.
+        However, in other contexts, these words can mean different things so the word <q>linearly</q> is important in broader contexts.
+    </p>
+    <proposition xml:id="prop-dependence-prop1">
+        <title>A dependent collection has a redundancy</title>
+        <statement>
+            <p>
+                If a nonempty collection <m>S\subset V-\{\vect{0}\}</m> is dependent, then there exists a vector <m>\vect{v}\in S</m> which is a linear combination of vectors in <m>S-\{\vect{v}\}</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Allow the definitions to structure your proof.
+            You may find <xref ref="def-dependence"/>, <xref ref="def-linear_combination"/>, <xref ref="def-field"/>, and <xref ref="def-vectorspace"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-dependence-prop2">
+        <title>A collection with a redundancy is dependent</title>
+        <statement>
+            <p>
+                If <m>S\subset V-\{\vect{0}\}</m> is nonempty and there exists a vector <m>\vect{v}\in S</m> which is a linear combination of vectors in <m>S-\{\vect{v}\}</m>, then <m>S</m> is dependent.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Reference the concepts and techniques of <xref ref="prop-dependence-prop1"/>.
+        </p>
+    </proof>
+    <p>
+        Observe that <xref ref="prop-dependence-prop1"/> and <xref ref="prop-dependence-prop2"/> taken together give an alternate characterization of dependence: <m>S</m> is dependent if and only if there exists <m>\vect{v}\in S</m> such that <m>\vect{v}\in \spn(S-\{\vect{v}\})</m>.
+    </p>
+    <proposition xml:id="prop-dependence-prop3">
+        <title>Subsets of independent sets are independent</title>
+        <statement>
+            <p>
+                If <m>S\subset V-\{\vect{0}\}</m> is nonempty and independent, <m>S_0\subset S</m> is nonempty, then <m>S_0</m> is independent.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Allow the definitions to structure your proof.
+            You may find <xref ref="def-dependence"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-dependence-prop4">
+        <title>Supersets of dependent sets are dependent</title>
+        <statement>
+            <p>
+                If <m>S\subset V-\{\vect{0}\}</m> is nonempty, <m>S_0\subset S</m> is nonempty and dependent, then <m>S</m> is dependent.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Allow the definitions to structure your proof.
+            You may find <xref ref="def-dependence"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-dependence-prop5">
+        <statement>
+            <p>
+                If <m>S\subset V-\{\vect{0}\}</m> is nonempty and independent, and <m>\vect{w}\in V</m> but <m>\vect{w}\notin \spn(S)</m>, then <m>S\cup \{\vect{w}\}</m> is independent.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Suppose there exists an expression of the form: <m>x_1\vect{v}_1+\cdots x_n\vect{v}_n+y\vect{w}=\vect{0}</m>, where <m>\vect{v}_i\in S</m>, <m>x_i,y\in F</m>.
+            You want to show <m>x_1=x_2=\cdots=x_n=y=0</m> (why?).
+            First suppose <m>y\ne 0</m> and try to deduce a contradiction about <m>\vect{w}</m>.
+            Deduce that <m>y=0</m>.
+            Next, use what you know about <m>S</m> to show that if <m>y=0</m>, then <m>x_1=x_2=\cdots=x_n=0</m> (why?).
+            You may find <xref ref="def-dependence"/>, <xref ref="def-linear_combination"/>, and <xref ref="def-span"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-dependence-increasing_independence2">
+        <statement>
+            <p>
+                If <m>S\subset V-\{\vect{0}\}</m> is nonempty and independent, and <m>\vect{w}\in V</m> such that <m>S\cup \{\vect{w}\}</m> dependent, then <m>\vect{w}\in \spn(S)</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Reference the concepts and techniques of <xref ref="prop-dependence-prop5"/>.
+        </p>
+    </proof>
+
+
+</section>
+
+
+
+
+
+
+
+

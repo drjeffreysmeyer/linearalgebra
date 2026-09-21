@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec13" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Basis</title>
+    <p>
+        Throughout this investigation, <m>V</m> will denote a <em>finite dimensional</em> vector spaces of dimension <m>n</m> over the field <m>F</m>.
+        You will analyze the notion of a basis.
+        You will prove results to help you identify bases and you will verify one of the core properties of bases.
+    </p>
+    <definition xml:id="def-basis">
+        <title>Basis</title>
+        <statement>
+            <p>
+                If <m>\mathcal{B}\subset V</m> is an independent, spanning set, then <m>\mathcal{B}</m> is a <term>basis</term> for <m>V</m>.
+                If we fix an order in which we write the vectors, we call it an <term>ordered basis</term>.
+                The plural of basis is <term>bases</term>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        By <xref ref="cor_dimension_well_defined"/>, all bases have the same cardinality and the cardinality of a basis is the dimension.
+    </p>
+    <proposition>
+        <statement>
+            <p>
+                If <m>V</m> is an <m>n</m>-dimensional vector space and <m>S\subset V</m> is a spanning set with <m>n</m> elements, then <m>S</m> is a basis.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a proof by contradiction.
+            Suppose <m>S</m> is not a basis.
+            Then <m>S</m> is dependent (why?).
+            Deduce <m>\dim V&lt;n</m>, yielding a contradiction.
+            You may find <xref ref="def-basis"/>, <xref ref="thm-rra"/>, and <xref ref="def-dimension"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-basis2">
+        <statement>
+            <p>
+                If <m>V</m> is an <m>n</m>-dimensional vector space and <m>S\subset V</m> is an independent set with <m>n</m> elements, then <m>S</m> is a basis.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a proof by contradiction.
+            Suppose <m>S</m> is not a basis.
+            Then <m>S</m> does not span <m>V</m> (why?).
+            Deduce <m>\dim V&gt;n</m>, yielding a contradiction.
+            You may find <xref ref="def-basis"/>, <xref ref="prop-dependence-prop5"/>, and <xref ref="def-dimension"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop-basis-lincomb_exists_unique">
+        <title>Every vector can be written uniquely as a linear combination of basis vectors</title>
+        <statement>
+            <p>
+                If <m>\mathcal{B}= \{\vect{v}_1,\ldots , \vect{v}_n\} \subset V</m> is an ordered basis and <m>\vect{w}\in V</m>, then there exists a unique collection of scalars <m>x_1,\ldots, x_n\in F</m> such that <m>\vect{w}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Existence follows immediately from the definition (why???).
+            To show uniqueness, suppose there exists <m>x_1,\ldots x_n\in F</m> and <m>y_1,\ldots y_n\in F</m> such that <m>\vect{w}=x_1\vect{v}_1+\cdots +x_n\vect{v}_n</m> and <m>\vect{w}=y_1\vect{v}_1+\cdots +y_n\vect{v}_n</m>.
+            Add the additive inverse of the second expression to the first.
+            Deduce <m>x_1=y_1</m>, <m>\ldots</m> <m>x_n=y_n</m> (how???).
+            You may find <xref ref="def-basis"/>, <xref ref="def-spanning"/>, <xref ref="def-dependence"/>, and <xref ref="def-vectorspace"/> useful.
+        </p>
+    </proof>
+
+    <insight>
+    <p>
+        As we shall see in future sections, bases are absolutely central to the study of linear algebra.
+        A basis contains the essence of the vector space it spans.
+        Think about what you just proved in <xref ref="prop-basis-lincomb_exists_unique"/> and explain how a basis <q>contains the essence of the vector space it spans.</q>
+    </p>
+    </insight>
+
+</section>
+
+
+
+
+
+
+
+

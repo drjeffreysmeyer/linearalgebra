@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp1sec-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Set Theoretic Foundations</title>
+    <p>
+        Rigorous mathematics needs some starting place.
+        As a community, we have generally decided the best foundations and language is that of sets.
+        We will take such a <alert>set-theoretic</alert> approach, which means we will base our notions on underlying concepts and notation from naive set theory.
+    </p>
+    <definition xml:id="def-sets">
+        <title>Sets</title>
+        <statement>
+            <p>
+                A <term>sets</term> is a collection of objects.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Think of sets as containers.
+    </p>
+    <definition xml:id="def-elements">
+        <title>Elements</title>
+        <statement>
+            <p>
+                If <m>X</m> is a set, then an object <m>x</m> within <m>X</m> is an <term>element</term> of <m>X</m>.
+                We denote this <m>x\in X</m>.
+            </p>
+        </statement>
+    </definition>
+    <definition xml:id="def-subset">
+        <title>Subset</title>
+        <statement>
+            <p>
+                A <term>subset</term> of a set <m>X</m> is a collection of objects contained within <m>S</m>.
+                We denote this <m>Y\subset X</m>.
+                In other words, <m>Y\subset X</m> if <m>x\in Y</m> implies <m>x\in X</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        The <alert>empty set</alert> <m>\varnothing</m> is the set with no elements.
+        The empty set is a subset of all sets.
+    </p>
+    <definition xml:id="def-equal_sets">
+        <title>Equality of Sets</title>
+        <statement>
+            <p>
+                Two set <m>X</m> and <m>Y</m> are <term>equal</term> they have they both have the same collection of elements.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        You should be familiar with the following standard <alert>set notation</alert>:
+    </p>
+    <me>S = \{ x \ | \ C\}</me>
+    <p>
+        should be read and understood as:
+        <em>"<m>S</m> is the set of all objects <m>x</m> satisfying condition <m>C</m>."</em>
+    </p>
+    <p>
+        You should have a basic understanding of the following fundamental set operations.
+    </p>
+    <definition xml:id="def-set_ops">
+        <title>Set Operations</title>
+        <statement>
+            <p>
+                Let <m>X</m> and <m>Y</m> be sets.
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        <term>Intersection</term>, denoted <m>X\cap Y</m>, is the set of all elements in <m>X</m> <em>and</em> <m>Y</m>.
+                        In symbols,
+                    </p>
+                    <men xml:id="eq-intersection">
+                        X\cap Y = \{x \ | \ x\in X \text{ and } x\in Y\}.
+                    </men>
+                </li>
+                <li>
+                    <p>
+                        <term>Union</term>, denoted <m>X\cup Y</m>, is the set of all elements in <m>X</m> <em>or</em> <m>Y</m>.
+                        In symbols,
+                    </p>
+                    <men xml:id="eq-union">
+                        X\cup Y = \{x \ | \ x\in X \text{ or } x\in Y\}.
+                    </men>
+                </li>
+                <li>
+                    <p>
+                        <term>Difference</term>, denoted <m>X-Y</m> or <m>X\backslash Y</m>, is the set of all elements in <m>X</m> <em>but not</em> <m>Y</m>.
+                        In symbols,
+                    </p>
+                    <men xml:id="eq-difference">
+                        X- Y = \{x \ | \ x\in X \text{ and } x\notin Y\}.
+                    </men>
+                </li>
+                <li>
+                    <p>
+                        <term>Cartesian product</term>, denoted <m>X\times Y</m>, is the set of <em>pairs</em> of elements in <m>X</m> and <m>Y</m>. In symbols,
+                    </p>
+                    <men xml:id="eq-product">
+                        X\times Y = \{ (x,y) \ | \ x\in X \text{ and } y\in Y\}.
+                    </men>
+                </li>
+            </ol>
+        </statement>
+    </definition>
+    <definition xml:id="def-set_map">
+        <title>Set Map</title>
+        <statement>
+            <p>
+                If <m>X</m> and <m>Y</m> are sets, a <term>set map</term> <m>f:X\to Y</m> is a rule that assigns to each element of <m>X</m> an element of <m>Y</m>.
+                We call <m>X</m> the <term>domain</term> of <m>f</m> and <m>Y</m> the <term>codomain</term> (or <term>target</term>) of <m>f</m>.
+            </p>
+        </statement>
+    </definition>
+    <definition xml:id="def-equal">
+        <title>Equality of Set Maps</title>
+        <statement>
+            <p>
+                Two set maps <m>f:X\to Y</m> and <m>g:X\to Y</m> are <term>equal</term> they do the same thing to each input. In symbols, for all <m>x\in X</m>, <m>f(x) = g(x)</m>. We denote this <m>f=g</m>.
+            </p>
+        </statement>
+    </definition>
+
+</section>

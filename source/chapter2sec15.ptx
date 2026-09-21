@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec15" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+    <title>Library of Examples of Dimensions</title>
+    <example>
+        <title>Finite Dimensional Vector Spaces</title>
+        <statement>
+            <p>
+                The following are examples of finite dimensional vector spaces:
+            </p>
+        </statement>
+    </example>
+    <example>
+        <title>Infinite Dimensional Vector Spaces</title>
+        <statement>
+            <p>
+                The following are examples of infinite dimensional vector spaces:
+            </p>
+        </statement>
+    </example>
+
+
+
+</section>
+
+
+
+
+
+
+
+

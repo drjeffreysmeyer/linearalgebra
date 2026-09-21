@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec10" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <title>Injection, Surjection, and Bijection</title>
+    <p>
+        In this investigation, you practice deductive proofs and rules of logical inference within the context of set maps.
+        You will explore certain important types of set maps and their relationships.
+    </p>
+    <definition xml:id="Def-do_nothing__set_map">
+        <title>Identity Map</title>
+        <statement>
+            <p>
+                If <m>X</m> is a set, then the <term>identity set map</term> is the rule <m>\id_X:X\to X</m> which assigns each element to itself, or in symbols, if <m>x\in X</m>, then <m>\id_X(x) :=x</m>.
+            </p>
+        </statement>
+    </definition>
+    <definition xml:id="Def-inj_sur_bij">
+        <title>Injection, Surjection, Bijection</title>
+        <statement>
+            <p>
+                If <m>X</m> and <m>Y</m> are sets and <m>f:X\to Y</m> is a set maps, then:
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        <m>f</m> is an <term>injection</term> (a.k.a <term>one-to-one</term>) if whenever <m>x_1,x_2\in X</m> are such that <m>f(x_1)=f(x_2)</m>, then <m>x_1=x_2</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>f</m> is a <term>surjection</term> (a.k.a <term>onto</term>) if for each <m>y\in Y</m>, there exists an <m>x\in X</m> such that <m>f(x)=y</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>f</m> is a <term>bijection</term> (a.k.a <term>set isomorphism</term>) if <m>f</m> is both injective and surjective.
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </definition>
+    <definition xml:id="def-composition">
+        <title>Composition</title>
+        <statement>
+            <p>
+                If <m>f:X\to Y</m> and <m>g:Y\to Z</m> are set maps, then the <term>composition</term> <m>(g\circ f):X\to Z</m> is the set map defined by, if <m>x\in X</m>, then <m>(g\circ f)(x):=g(f(x))</m>.
+            </p>
+        </statement>
+    </definition>
+    <proposition xml:id="prop-compinjectsurject">
+        <statement>
+            <p>
+                Let <m>f:X\to Y</m> and <m>g:Y\to X</m>.
+                If <m>g\circ f= \id_X</m>, then <m>f</m> is injective and <m>g</m> is surjective.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Begin by showing <m>f</m> is injective.
+            Suppose <m>x_1,x_2\in X</m> are such that <m>f (x_1)=f (x_2)</m>.
+            Deduce <m>x_1=x_2</m>.
+            Next show <m>g</m> is surjective.
+            Pick some <m>x\in X</m>. Find some <m>y\in Y</m> such that <m>g(y)=x</m>.
+            You may find <xref ref="Def-do_nothing__set_map"/>, <xref ref="def-composition"/>, and <xref ref="Def-inj_sur_bij"/> helpful.
+        </p>
+    </proof>
+    <definition>
+        <title>Inverse</title>
+        <statement>
+            <p>
+                If <m>f:X\to Y</m> and <m>g:Y\to X</m> such that <m>g\circ f= \id_X</m> and <m>f\circ g= \id_Y</m>, then we say <m>g</m> is an <term>inverse</term> of <m>f</m> and write <m>g = f^{-1}</m>. We then say that <m>f</m> is <term>invertible</term>.
+            </p>
+        </statement>
+    </definition>
+    <corollary xml:id="cor-sets-bijection_inverse">
+        <title>Alternative characterization of bijection - existence of inverse map</title>
+        <statement>
+            <p>
+                If <m>f:X\to Y</m> is a bijection, then <m>f</m> is invertible. Conversely, if <m>f</m> is invertible, then <m>f</m> is a bijection.
+            </p>
+        </statement>
+    </corollary>
+    <proof>
+        <p>
+            Try a direct proof.
+            First show that if <m>f</m> is a bijection, then you may construct an inverse map.
+            Next, show that if an inverse exists, then <m>f</m> is bijective.
+            You may find <xref ref="prop-compinjectsurject"/> helpful.
+        </p>
+    </proof>
+
+   
+   
+
+</section>
+
+
+
+
+
+
+
+

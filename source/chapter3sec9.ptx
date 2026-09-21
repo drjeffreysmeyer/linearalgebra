@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp3sec9" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+        <title>Matrix Theorem</title>
+        <p>
+            You showed that matrix transformations are linear maps.
+            The surprising and powerful result you will prove in this investigation is, upon choosing coordinates, <em>every</em> linear map between finite dimensional vector spaces is a matrix transformation.
+        </p>
+        <theorem xml:id="thm-matrix_coordinates">
+            <title>Matrix Theorem</title>
+            <statement>
+                <p>
+                    If <m>\mathcal{B}\subset V</m> and <m>\mathcal{C}\subset W</m> are bases and <m>T:V\to W</m> is a linear map, then there exists a unique <m>m\times n</m> matrix <m>[T]_{\mathcal{B},\mathcal{C}}</m> such that, for all <m>\vect{v}\in V</m>,
+                </p>
+                <men xml:id="eq-matrixthm1">
+                    [T]_{\mathcal{B},\mathcal{C}}[\vect{v}]_{\mathcal{B}}=[T(\vect{v})]_{\mathcal{C}}.
+                </men>
+                <p>
+                    Furthermore, this matrix can be calculated by finding the <m>\mathcal{C}</m>-coordinates of the images of each <m>\mathcal{B}</m>-basis vector, i.e. if <m>\mathcal{B}= \{\vect{v}_1,\ldots , \vect{v}_n\}</m>, then
+                </p>
+                <men xml:id="eq-matrixthm2">
+                    [T]_{\mathcal{B},\mathcal{C}} = \bigg[ \ [T(\vect{v}_1)]_\mathcal{C} \ \bigg| \cdots \ \bigg| \ [T(\vect{v}_n)]_\mathcal{C}\bigg].
+                </men>
+            </statement>
+        </theorem>
+        <proof>
+            <p>
+                Try a direct proof.
+                Begin by proving existence.
+                Carefully show that the matrix <m>[T]_{\mathcal{B},\mathcal{C}}</m> in <xref ref="eq-matrixthm2"/> satisfies <xref ref="eq-matrixthm1"/>.
+                To do this, you may find it useful to expand <m>\vect{v}</m> relative to <m>\mathcal{B}</m>, apply <m>T</m>, and then <m>\mathcal{C}</m>-coordinates.
+                Next show uniqueness by supposing that, if matrix <m>A:=[\vect{w}_1| \cdots|\vect{w}_n]</m> satisfies <xref ref="eq-matrixthm1"/> (i.e. <m>A[\vect{v}]_{\mathcal{B}}=[T(\vect{v})]_{\mathcal{C}}</m>), then <m>A=[T]_{\mathcal{B},\mathcal{C}}</m>.
+                To do this, reason about <m>A[\vect{v}_i]_{\mathcal{B}}</m> and <m>[T]_{\mathcal{B},\mathcal{C}}[\vect{v}_i]_{\mathcal{B}}</m> and deduce that, for each <m>i</m>, <m>\vect{w}_i=[T(\vect{v}_i)]_\mathcal{C}</m>.
+                You may find <xref ref="def-coordmap"/>, <xref ref="prop-basis-lincomb_exists_unique"/>, <xref ref="def-linearmap"/>, <xref ref="prop-coord_map_is_linear"/>, <xref ref="def-matrix_multiplication"/>, <xref ref="def-matrix_multiplication"/>, <xref ref="def-mixturemap"/>, and <xref ref="prop-map_determined_by_basis"/> useful.
+            </p>
+        </proof>
+        <p>
+            The statement of the Theorem <xref ref="thm-matrix_coordinates"/> can be visualized by saying that both paths in the below diagram from the top left to the bottom right give the same output.
+            (We say that the <em>diagram commutes</em>).
+        </p>
+        <p>
+            Observing that the mixture map reverses the coordinate map, Theorem <xref ref="thm-matrix_coordinates"/> can be rephrased as saying the following diagram commutes.
+        </p>
+        <corollary>
+            <statement>
+                <p>
+                    If <m>T:F^n\to F^n</m> is a matrix transformation with associated matrix <m>A</m>, and <m>\mathcal{B}\subset F^n</m> is an ordered basis, then <m>A=P_\mathcal{B}BP^{-1}_{\mathcal{B}}</m> where <m>B:= [T]_{\mathcal{B},\mathcal{B}}</m>.
+                </p>
+            </statement>
+        </corollary>
+        <definition xml:id="def-smd">
+            <title>Similar Matrix Decomposition</title>
+            <statement>
+                <p>
+                    If <m>A=PBP^{-1}</m>, then this is a <term>similar matrix decomposition</term> (SMD) of <m>A</m> and we say <m>A</m> and <m>B</m> are <term>similar</term>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            A major goal of future investigations will be to find <q>good</q> bases relative to which matrices have a <q>nice</q> similar matrix decomposition.
+        </p>
+
+        <insight>
+            <p>
+            As stated earlier, the highlight of this section is, you have shown that, upon choosing coordinates, every linear map is a matrix transformation.
+            With that in mind, in a few paragraphs, address each of the following prompts.
+        </p>
+        <ol>
+            <li>
+                <p>
+                    If every linear map is a matrix transformation, why work with linear maps at all? Why not just work with matrix transformations?
+                </p>
+            </li>
+            <li>
+                <p>
+                    If our goal is to understand linear maps, what does the Matrix Theorem tell us about the significance of choosing bases? How can bases be understood as a problem solving strategy in this context?
+                </p>
+            </li>
+        </ol>
+                </insight>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+

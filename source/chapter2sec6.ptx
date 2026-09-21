@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec6" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+
+    <title>The Subspace Theorem</title>
+    <theorem xml:id="thm-subspace_thm">
+        <title>Subspace Theorem</title>
+        <statement>
+            <p>
+                If <m>V</m> is a vector space over <m>F</m> and <m>W\subset V</m> is a subspace, then the vector space operations of <m>V</m> restricted to <m>W</m> make <m>W</m> a vector space (i.e. <m>W</m> satisfies axioms (VS1)-(VS8)).
+            </p>
+        </statement>
+    </theorem>
+    <proof>
+        <p>
+            Try a direct proof.
+            For as important and useful as the Subspace Theorem is, its proof is surprisingly straightforward.
+            You will need to verify each property (VS1)-(VS8).
+            Most properties are immediately inherited from <m>V</m>.
+            The only two that are not as immediate are (V2) and inverses (V3)
+            You may find  <xref ref="prop-subspaces_contain_zero"/>,  <xref ref="prop-vector_space_inverses_scaling"/>, and  <xref ref="def-subspace"/> useful.
+        </p>
+    </proof>
+    <p>
+        The Subspace Theorem is very powerful for proving things are vector spaces quickly without having to verify (VS1)-(VS8).
+        In particular, together with <xref ref="prop-vector_space_of_lists"/> and <xref ref="prop-vector_space_of_functions"/>, we can construct and verify infinitely many new vector spaces.
+    </p>
+    <example xml:id="ex-subspaces-calculus">
+        <title>Examples of Subspaces from Calculus</title>
+        <statement>
+            <p>
+                If <m>I\subset \R</m> is an interval (possibly all of <m>\R</m>), then in your calculus courses you showed that each of the following subsets of the vector space <m>\mathcal{F}(I,\R)</m> satisfy (S0)-(S2), or in other words, is a subspace:
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        Continuous Functions: 
+                        <me>\mathcal{C}(I,\R) = \{ f\in \mathcal{F}(I,\R) \ | \ f \text{ is continuous at each point in the domain } I\},</me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Differentiable Functions: 
+                        <me>\mathcal{D}(I,\R) = \{ f\in \mathcal{F}(I,\R) \ | \ f \text{ is differentiable at each point in the domain } I\},</me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Integrable functions: 
+                        <me>\mathcal{M}(I,\R) = \{ f\in \mathcal{F}(I,\R) \ | \ \int_I f(x)dx &lt; \infty\},</me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Polynomials: 
+                        <me>\mathcal{P}(\R) = \{ f\in \mathcal{F}(I,\R) \ | \ f \text{ is a polynomial}\},</me>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Polynomials of bounded degree: 
+                        <me>\mathcal{P}_n(\R) = \{ f\in \mathcal{F}(I,\R) \ | \ f \text{ is a polynomial of degree less than or equal to } n\}.</me>
+                    </p>
+                </li>
+            </ol>
+            <p>
+                The Subspace Theorem then implies these are vector spaces.
+            </p>
+        </statement>
+    </example>
+    <p>
+        These and related vector spaces play important roles throughout mathematics, physics, and computer science, including in functional analysis, Fourier analysis, wave mechanics, quantum mechanics, centrality, and ranking.
+    </p>
+
+    <insight>
+        
+    <p>
+        In Fourier analysis we look at the set of functions <m>f:\R\to \R</m> that repeat every <m>2\pi</m> (i.e. <m>f(x+2\pi)=f(x)</m>).
+        Let <m>\mathcal{P}_{2\pi}(\R,\R)</m> denote this set.
+        How you might show this collection of functions is a vector space?
+        Explain your thinking at each step, why you make the arguments you do.
+    </p>
+
+    </insight>
+
+
+</section>
+
+
+
+
+
+
+
+

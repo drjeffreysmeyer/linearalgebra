@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec7" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Span</title>
+    <p>
+        One core idea of linear algebra is <em>mixture</em>.
+        Vector space axioms were precisely the structures necessary to allow for mixtures, which we describe formally as linear combinations.
+    </p>
+    <p>
+        Throughout this investigation, <m>V</m> will denote a vector space over the field <m>F</m>.
+    </p>
+    <definition xml:id="def-span">
+        <title>Span</title>
+        <statement>
+            <p>
+                The <term>span</term> of <m>S</m>, denoted <m>\spn(S)</m>, is the set of all linear combinations of vectors in <m>S</m>.
+                (Note that <m>S</m> can be infinite, but the combinations are finite.)
+                In symbols,
+            </p>
+            <me>\spn(S) := \{x_1\vect{v}_1+\cdots +x_n\vect{v}_n \ | \ \vect{v}_1,\ldots, \vect{v}_n\in S \text{ and } x_1,x_2,\ldots, x_n\in F\}.</me>
+            <p>
+                We define the span of the empty set to be the trivial subspace.
+            </p>
+        </statement>
+    </definition>
+    <proposition xml:id="prop-span_contains_S">
+        <title>Span of <m>S</m> contains <m>S</m></title>
+        <statement>
+            <p>
+                If <m>S\subset V</m> is nonempty, then <m>S\subset \spn(S)</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Allow the definitions to structure your proof.
+            You may find  <xref ref="def-span"/> and  <xref ref="def-linear_combination"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="prop_span_is_subspace">
+        <title>Span is a subspace</title>
+        <statement>
+            <p>
+                If <m>S\subset V</m> is nonempty, then <m>\spn(S)</m> is a vector subspace.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Allow the definitions to structure your proof.
+            To show (S1), you will need to show that, if <m>\vect{w}_1,\vect{w}_2\in \spn(S)</m>, then <m>\vect{w}_1+\vect{w}_2\in \spn(S)</m>.
+            To do this, you need to interpret and unravel definitions.
+            Similar for (S2).
+            You may find <xref ref="def-span"/>, <xref ref="def-linear_combination"/>, <xref ref="def-subspace"/>, <xref ref="prop-span_contains_S"/>, and <xref ref="def-vectorspace"/> useful.
+        </p>
+    </proof>
+    <proposition xml:id="lem-span_in_subspace">
+        <statement>
+            <p>
+                If <m>W\subset V</m> is a subspace and <m>S\subset W</m>, then <m>\spn(S)\subset W</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            You need to show that any linear combination of vectors in <m>S</m> is contained within <m>W</m>.
+            You may find <xref ref="def-span"/>, <xref ref="def-linear_combination"/>, <xref ref="def-subspace"/>, and <xref ref="prop_subspaces_closed_under_lin_comb"/> useful.
+        </p>
+    </proof>
+    <definition xml:id="def-spanning">
+        <title>Spanning Set</title>
+        <statement>
+            <p>
+                If <m>W\subset V</m> is a subspace and <m>S\subset V</m> such that <m>\spn(S)=W</m>, then we say <m>S</m> is a <term>spanning set</term> for <m>W</m>, or equivalently, <m>S</m> <term>spans</term> <m>W</m>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Please note how span is used in two ways: <em>span</em>, the noun, denotes the set of mixtures of a set of vectors; meanwhile <em>spans</em>, the verb, is a (true/false) relationship between a set of vectors <m>S</m> and a subspace <m>W</m>.
+    </p>
+    <p>
+        A useful alternative characterization of span is that it is the <em>smallest</em> subspace containing <m>S</m>, which is made precise by the following proposition.
+    </p>
+    <proposition>
+        <title>Span(<m>S</m>) is the smallest subspace containing <m>S</m></title>
+        <statement>
+            <p>
+                If <m>S\subset V</m> is nonempty, then <m>\spn(S)</m> is equal to the intersection of all subspaces of <m>V</m> which contain <m>S</m>.
+            </p>
+        </statement>
+    </proposition>
+    <proof>
+        <p>
+            Try a direct proof.
+            Let <m>\mathcal{A}</m> denote the collection of all subspaces of <m>V</m> containing <m>S</m>.
+            In symbols, <m>\mathcal{A} = \{ W\subset V \ | \ W \text{ is a subspace and } S\subset W\}</m>.
+            Then you want to show <m>\spn(S) = \cap_{W\in\mathcal{A}}W</m>.
+            You will need to show both inclusions.
+            To show that <m>\cap_{W\in\mathcal{A}}W \subset \spn(S)</m> is immediate (why???).
+            To show the other inclusion, observe <m>S</m> is in each <m>W</m> for which <m>W\in\mathcal{A}</m>, and deduce <m>\spn(S)\subset W</m> (how???).
+            You may find <xref ref="prop_span_is_subspace"/>, <xref ref="lem-span_in_subspace"/>, and <xref ref="def-set_ops"/> useful.
+        </p>
+    </proof>
+
+</section>
+
+
+
+
+
+
+
+

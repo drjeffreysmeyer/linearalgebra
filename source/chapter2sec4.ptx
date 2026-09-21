@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chp2sec4" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+        <title>Subspaces</title>
+        <p>
+            Once again, think back to your first course in linear algebra.
+            Within <m>\R^n</m>, we were constantly looking at spans and null spaces.
+            Geometrically, we were looking at lines, planes, and more generally, <m>k</m>-planes, through the origin.
+            We now perform a structural abstraction on these objects, which we now formalize with subspaces.
+        </p>
+        <definition xml:id="def-subspace">
+            <title>Subspace</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a vector space over the field <m>F</m>, then a <term>vector subspace</term> of <m>V</m> is a subset <m>W\subset V</m> satisfying:
+                </p>
+                <ol marker="(S0)">
+                    <li>
+                        <p>
+                            <term>(S0)</term> <m>W</m> is nonempty,
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <term>(S1)</term> <m>W</m> closed under addition: if <m>\vect{w}_1,\vect{w}_2\in W</m>, then <m>\vect{w}_1+\vect{w}_2 \in W</m>,
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <term>(S2)</term> <m>W</m> is closed under scaling: if <m>a \in F</m> and <m>\vect{w}\in W</m>, then <m>a\vect{w}\in W</m>.
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    Any subspace of <m>V</m> which is not <m>V</m> is called <term>proper</term> and denoted <m>W\subsetneq V</m>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            I will often use the symbol <m>W</m> for a subspace.
+            Different texts give different definitions of subspaces, all of which are equivalent. I give the definition I think is most convenient.
+        </p>
+        <proposition xml:id="prop-subspaces_contain_zero">
+            <title>Subspaces contain zero</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a vector space and <m>W\subset V</m> is a subspace, then <m>\vect{0}\in W</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                You may find  <xref ref="def-subspace"/> (S0), (S2), and  <xref ref="prop-vs-zero_scaling"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop_subspaces_closed_under_lin_comb">
+            <title>Subspaces are closed under linear combination</title>
+            <statement>
+                <p>
+                    If <m>W\subset V</m> is a subspace and <m>\vect{v} \in V</m> is a linear combination of vectors in <m>W</m>, then <m>\vect{v}\in W</m>.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                You may find  <xref ref="def-linear_combination"/>,  <xref ref="def-subspace"/>, and  <xref ref="def-vectorspace"/> useful.
+            </p>
+        </proof>
+        <proposition>
+            <title>The whole set is a subspace</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a vector space, then <m>V</m> is a subspace.
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                You need to verify <m>V</m> satisfies (S0)-(S2).
+                You may find  <xref ref="def-subspace"/> and  <xref ref="def-vectorspace"/> useful.
+            </p>
+        </proof>
+        <proposition xml:id="prop-trivial_subspace">
+            <title>The zero subset is a subspace</title>
+            <statement>
+                <p>
+                    If <m>V</m> is a vector space, then <m>\{\vect{0}\}</m> is a subspace (called the <alert>trivial subspace</alert>).
+                </p>
+            </statement>
+        </proposition>
+        <proof>
+            <p>
+                Try a direct proof.
+                Allow the definitions to structure your proof.
+                You need to verify <m>\{\vect{0}\}</m> satisfies (S0)-(S2).
+                You may find  <xref ref="def-subspace"/>,  <xref ref="prop-vs-scaling_zero_vector"/>, and  <xref ref="def-vectorspace"/> (VS2) useful.
+            </p>
+        </proof>
+
+        <insight>
+        <p>
+            Is <m>\R^2</m> a subspace of <m>\R^3</m>?
+        </p>            
+        </insight>
+
+
+        <proposition xml:id="prop-ss_zero_in_one">
+            <statement>
+                <p>
+                    If <m>F</m> is a field, <m>n\in \Z_+</m>, and <m>i\in \{1,2,\ldots, n\}</m>, then the set <m>W_i:=\left\{\begin{bmatrix}v_1\\v_2\\ \vdots \\ v_n\end{bmatrix} \in F^n \ \Bigg| \ v_i=0 \right\}</m> is a vector subspace of <m>F^n</m>.
+                </p>
+            </statement>
+        </proposition>
+
+
+            
+        <p>
+            <alert>Generalization</alert> is another important mathematical action we perform, distinct from, but related to structural abstraction.
+            See, for example, the work of Harel and Tall,
+            <url href="https://homepages.warwick.ac.uk/staff/David.Tall/pdfs/dot1991b-harel-flm.pdf">The General, the Abstract, and the Generic in Advanced Mathematics.</url>
+            Roughly speaking, <alert>expansive generalization</alert> occurs when you <em>expand the applicability</em> of an object or process with which you are already familiar.
+        </p>
+  
+
+        <p>
+            In the proposition below, use expansive generalization upon the subspaces <m>W_i\subset F^n</m> in <xref ref="prop-ss_zero_in_one"/>, find, clearly conjecture, and then verify a more general collection of subspaces of <m>F^n</m>.
+        </p>
+        <proposition xml:id="ecp-subspaces_generalization">
+            <statement>
+                <p>
+                    If <m>F</m> is a field, and INSERT CONDITIONS, then the set INSERT SET is a vector subspace of <m>F^n</m>.
+                </p>
+            </statement>
+        </proposition>
+
+        <insight>
+        <p>
+            Compare and contrast expansive generalization with structural abstraction.
+            You may find it useful to use as examples, <m>\R^2</m> to <m>\R^n</m> for expansive generalization and <m>\R^n</m> to an abstract vector space <m>V</m> for structural abstraction.
+        </p>
+        </insight>
+
+</section>
+
+
+
+
+
+
+
+
