@@ -4,7 +4,7 @@
 
         <title>Linear Maps</title>
         <p>
-            In your first course in linear algebra, you studies matrix transformations <m>T:\R^n\to \R^m</m>, <m>\vect{x}\mapsto A\vect{x}</m>, where <m>A</m> is an <m>m\times n</m> matrix and <m>A\vect{x}</m> is matrix multiplication.
+            In your first course in linear algebra, you studied matrix transformations <m>T:\R^n\to \R^m</m>, <m>\vect{x}\mapsto A\vect{x}</m>, where <m>A</m> is an <m>m\times n</m> matrix and <m>A\vect{x}</m> is matrix multiplication.
             These transformations had significant algebraic and geometric interpretations and applications.
             As with all things in this course, we revisit this object and perform structural abstraction - yielding a linear map.
         </p>
