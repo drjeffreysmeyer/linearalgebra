@@ -16,7 +16,7 @@
             Try a direct proof.
             Allow the definitions to structure your proof.
             This is what we call a <q>follow your nose</q> proof, in the sense there is only really one, straightforward, way to go.
-            You may find <xref ref="def-subspace"/>, Proposition <xref ref="prop-subspaces_contain_zero"/>, and <xref ref="def-set_ops"/> useful.
+            You may find <xref ref="def-subspace"/>,  <xref ref="prop-subspaces_contain_zero"/>, and <xref ref="def-set_ops"/> useful.
         </p>
     </proof>
     <proposition>
@@ -30,7 +30,7 @@
     <proof>
         <p>
             Try a direct proof.
-            Generalize your proof of Proposition <xref ref="prop-ss-intersections_two"/>.
+            Generalize your proof of  <xref ref="prop-ss-intersections_two"/>.
         </p>
     </proof>
     <definition xml:id="def-subspace_sums">
@@ -62,7 +62,7 @@
             Try a direct proof.
             Allow the definitions to structure your proof.
             This is another <q>follow your nose</q> proof.
-            You may find <xref ref="def-subspace"/>, Proposition <xref ref="prop-subspaces_contain_zero"/>, and <xref ref="def-subspace_sums"/> useful.
+            You may find <xref ref="def-subspace"/>,  <xref ref="prop-subspaces_contain_zero"/>, and <xref ref="def-subspace_sums"/> useful.
         </p>
     </proof>
     <corollary>
@@ -77,14 +77,14 @@
         <p>
             Try an inductive proof.
             Observe <m>W_1+ W_2+\cdots W_r = (W_1+ W_2+\cdots W_{r-1})+W_r</m> (WHY?)
-            You may find <xref ref="def-subspace_sums"/>, <xref ref="def-vectorspace"/>, and Proposition <xref ref="prop-ss-sums"/> useful.
+            You may find <xref ref="def-subspace_sums"/>, <xref ref="def-vectorspace"/>, and <xref ref="prop-ss-sums"/> useful.
         </p>
     </proof>
 
     <insight>
     <p>
         If <m>W_1,W_2\subset V</m> are vector subspaces, then their union <m>W_1\cup W_2</m> is almost never a vector subspace.
-        Carefully demonstrate this in <m>\R^2</m> visually with lines and symbolically with subspaces <m>W_1</m> and <m>W_2</m> as defined in Proposition <xref ref="prop-ss_zero_in_one"/>.
+        Carefully demonstrate this in <m>\R^2</m> visually with lines and symbolically with subspaces <m>W_1</m> and <m>W_2</m> as defined in  <xref ref="prop-ss_zero_in_one"/>.
     </p>
     </insight>
 

@@ -48,7 +48,7 @@
     </corollary>
     <proof>
         <p>
-            Try a direct proof. Iterate the Redundancy Reduction Algorithm (Theorem <xref ref="thm-rra"/>).
+            Try a direct proof. Iterate the Redundancy Reduction Algorithm (<xref ref="thm-rra"/>).
         </p>
     </proof>
     <p>

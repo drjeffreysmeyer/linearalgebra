@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter05" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inner Produce Spaces</title>
+
+  <!-- include sections -->
+  <xi:include href="chapter5sec1.ptx" />
+  <xi:include href="chapter5sec2.ptx" />
+  <xi:include href="chapter5sec3.ptx" />
+  <xi:include href="chapter5sec4.ptx" />
+  <xi:include href="chapter5sec5.ptx" />
+  <xi:include href="chapter5sec6.ptx" />
+  <xi:include href="chapter5sec7.ptx" />
+  <xi:include href="chapter5sec8.ptx" />
+  <xi:include href="chapter5sec9.ptx" />
+  <xi:include href="chapter5sec10.ptx" />
+  <xi:include href="chapter5sec11.ptx" />
+</chapter>

@@ -37,11 +37,11 @@
             </p>
         </proof>
         <p>
-            The statement of the Theorem <xref ref="thm-matrix_coordinates"/> can be visualized by saying that both paths in the below diagram from the top left to the bottom right give the same output.
+            The statement of the <xref ref="thm-matrix_coordinates"/> can be visualized by saying that both paths in the below diagram from the top left to the bottom right give the same output.
             (We say that the <em>diagram commutes</em>).
         </p>
         <p>
-            Observing that the mixture map reverses the coordinate map, Theorem <xref ref="thm-matrix_coordinates"/> can be rephrased as saying the following diagram commutes.
+            Observing that the mixture map reverses the coordinate map, <xref ref="thm-matrix_coordinates"/> can be rephrased as saying the following diagram commutes.
         </p>
         <corollary>
             <statement>

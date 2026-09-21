@@ -18,17 +18,17 @@
                 <ol marker="(S0)">
                     <li>
                         <p>
-                            <term>(S0)</term> <m>W</m> is nonempty,
+                            <m>W</m> is nonempty,
                         </p>
                     </li>
                     <li>
                         <p>
-                            <term>(S1)</term> <m>W</m> closed under addition: if <m>\vect{w}_1,\vect{w}_2\in W</m>, then <m>\vect{w}_1+\vect{w}_2 \in W</m>,
+                            <m>W</m> closed under addition: if <m>\vect{w}_1,\vect{w}_2\in W</m>, then <m>\vect{w}_1+\vect{w}_2 \in W</m>,
                         </p>
                     </li>
                     <li>
                         <p>
-                            <term>(S2)</term> <m>W</m> is closed under scaling: if <m>a \in F</m> and <m>\vect{w}\in W</m>, then <m>a\vect{w}\in W</m>.
+                            <m>W</m> is closed under scaling: if <m>a \in F</m> and <m>\vect{w}\in W</m>, then <m>a\vect{w}\in W</m>.
                         </p>
                     </li>
                 </ol>

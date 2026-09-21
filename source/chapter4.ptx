@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter04" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Eigentheory</title>
+
+  <!-- include sections -->
+  <xi:include href="chapter4sec1.ptx" />
+  <xi:include href="chapter4sec2.ptx" />
+  <xi:include href="chapter4sec3.ptx" />
+  <xi:include href="chapter4sec4.ptx" />
+  <xi:include href="chapter4sec5.ptx" />
+  <xi:include href="chapter4sec6.ptx" />
+  <xi:include href="chapter4sec7.ptx" />
+  <xi:include href="chapter4sec8.ptx" />
+  <xi:include href="chapter4sec9.ptx" />
+  <xi:include href="chapter4sec10.ptx" />
+  <xi:include href="chapter4sec11.ptx" />
+</chapter>
