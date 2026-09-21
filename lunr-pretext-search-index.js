@@ -664,7 +664,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Subspaces",
-  "body": " Subspaces  Once again, think back to your first course in linear algebra. Within , we were constantly looking at spans and null spaces. Geometrically, we were looking at lines, planes, and more generally, -planes, through the origin. We now perform a structural abstraction on these objects, which we now formalize with subspaces.   Subspace   If is a vector space over the field , then a vector subspace of is a subset satisfying:     (S0)  is nonempty,     (S1)  closed under addition: if , then ,     (S2)  is closed under scaling: if and , then .    Any subspace of which is not is called proper and denoted .    I will often use the symbol for a subspace. Different texts give different definitions of subspaces, all of which are equivalent. I give the definition I think is most convenient.   Subspaces contain zero   If is a vector space and is a subspace, then .     Try a direct proof. You may find (S0), (S2), and useful.    Subspaces are closed under linear combination   If is a subspace and is a linear combination of vectors in , then .     Try a direct proof. Allow the definitions to structure your proof. You may find , , and useful.    The whole set is a subspace   If is a vector space, then is a subspace.     Try a direct proof. Allow the definitions to structure your proof. You need to verify satisfies (S0)-(S2). You may find and useful.    The zero subset is a subspace   If is a vector space, then is a subspace (called the trivial subspace ).     Try a direct proof. Allow the definitions to structure your proof. You need to verify satisfies (S0)-(S2). You may find , , and (VS2) useful.    Is a subspace of ?     If is a field, , and , then the set is a vector subspace of .     Generalization is another important mathematical action we perform, distinct from, but related to structural abstraction. See, for example, the work of Harel and Tall, The General, the Abstract, and the Generic in Advanced Mathematics. Roughly speaking, expansive generalization occurs when you expand the applicability of an object or process with which you are already familiar.  In the proposition below, use expansive generalization upon the subspaces in , find, clearly conjecture, and then verify a more general collection of subspaces of .    If is a field, and INSERT CONDITIONS, then the set INSERT SET is a vector subspace of .     Compare and contrast expansive generalization with structural abstraction. You may find it useful to use as examples, to for expansive generalization and to an abstract vector space for structural abstraction.   "
+  "body": " Subspaces  Once again, think back to your first course in linear algebra. Within , we were constantly looking at spans and null spaces. Geometrically, we were looking at lines, planes, and more generally, -planes, through the origin. We now perform a structural abstraction on these objects, which we now formalize with subspaces.   Subspace   If is a vector space over the field , then a vector subspace of is a subset satisfying:     is nonempty,     closed under addition: if , then ,     is closed under scaling: if and , then .    Any subspace of which is not is called proper and denoted .    I will often use the symbol for a subspace. Different texts give different definitions of subspaces, all of which are equivalent. I give the definition I think is most convenient.   Subspaces contain zero   If is a vector space and is a subspace, then .     Try a direct proof. You may find (S0), (S2), and useful.    Subspaces are closed under linear combination   If is a subspace and is a linear combination of vectors in , then .     Try a direct proof. Allow the definitions to structure your proof. You may find , , and useful.    The whole set is a subspace   If is a vector space, then is a subspace.     Try a direct proof. Allow the definitions to structure your proof. You need to verify satisfies (S0)-(S2). You may find and useful.    The zero subset is a subspace   If is a vector space, then is a subspace (called the trivial subspace ).     Try a direct proof. Allow the definitions to structure your proof. You need to verify satisfies (S0)-(S2). You may find , , and (VS2) useful.    Is a subspace of ?     If is a field, , and , then the set is a vector subspace of .     Generalization is another important mathematical action we perform, distinct from, but related to structural abstraction. See, for example, the work of Harel and Tall, The General, the Abstract, and the Generic in Advanced Mathematics. Roughly speaking, expansive generalization occurs when you expand the applicability of an object or process with which you are already familiar.  In the proposition below, use expansive generalization upon the subspaces in , find, clearly conjecture, and then verify a more general collection of subspaces of .    If is a field, and INSERT CONDITIONS, then the set INSERT SET is a vector subspace of .     Compare and contrast expansive generalization with structural abstraction. You may find it useful to use as examples, to for expansive generalization and to an abstract vector space for structural abstraction.   "
 },
 {
   "id": "def-subspace",
@@ -673,7 +673,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "2.4.1",
   "title": "Subspace.",
-  "body": " Subspace   If is a vector space over the field , then a vector subspace of is a subset satisfying:     (S0)  is nonempty,     (S1)  closed under addition: if , then ,     (S2)  is closed under scaling: if and , then .    Any subspace of which is not is called proper and denoted .   "
+  "body": " Subspace   If is a vector space over the field , then a vector subspace of is a subset satisfying:     is nonempty,     closed under addition: if , then ,     is closed under scaling: if and , then .    Any subspace of which is not is called proper and denoted .   "
 },
 {
   "id": "prop-subspaces_contain_zero",
@@ -790,7 +790,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Subspaces and Set Operations",
-  "body": " Subspaces and Set Operations   The intersection of two subspaces is a subspace   If are vector subspaces, then is a vector subspace.     Try a direct proof. Allow the definitions to structure your proof. This is what we call a follow your nose proof, in the sense there is only really one, straightforward, way to go. You may find , Proposition , and useful.    The intersection of arbitrarily many subspaces is a subspace   If is a (possibly infinite) collection of subspaces of , then their intersection is a subspace of .     Try a direct proof. Generalize your proof of Proposition .    Subspace Sum   If is a vector space and are subspaces, then their sum is the set   More generally, the sum of a finite collection of subspaces is     Observe how we are implicitly using associativity in the definition of when .   The sum of two subspaces is a subspace   If are vector subspaces, then their sum is a vector subspace.     Try a direct proof. Allow the definitions to structure your proof. This is another follow your nose proof. You may find , Proposition , and useful.    The sum of finitely many subspaces is a subspace   If are vector subspaces, then is a vector subspace.     Try an inductive proof. Observe (WHY?) You may find , , and Proposition useful.    If are vector subspaces, then their union is almost never a vector subspace. Carefully demonstrate this in visually with lines and symbolically with subspaces and as defined in Proposition .   "
+  "body": " Subspaces and Set Operations   The intersection of two subspaces is a subspace   If are vector subspaces, then is a vector subspace.     Try a direct proof. Allow the definitions to structure your proof. This is what we call a follow your nose proof, in the sense there is only really one, straightforward, way to go. You may find , , and useful.    The intersection of arbitrarily many subspaces is a subspace   If is a (possibly infinite) collection of subspaces of , then their intersection is a subspace of .     Try a direct proof. Generalize your proof of .    Subspace Sum   If is a vector space and are subspaces, then their sum is the set   More generally, the sum of a finite collection of subspaces is     Observe how we are implicitly using associativity in the definition of when .   The sum of two subspaces is a subspace   If are vector subspaces, then their sum is a vector subspace.     Try a direct proof. Allow the definitions to structure your proof. This is another follow your nose proof. You may find , , and useful.    The sum of finitely many subspaces is a subspace   If are vector subspaces, then is a vector subspace.     Try an inductive proof. Observe (WHY?) You may find , , and useful.    If are vector subspaces, then their union is almost never a vector subspace. Carefully demonstrate this in visually with lines and symbolically with subspaces and as defined in .   "
 },
 {
   "id": "prop-ss-intersections_two",
@@ -808,7 +808,7 @@ var ptx_lunr_docs = [
   "type": "Hint",
   "number": "2.5.1",
   "title": "",
-  "body": " Try a direct proof. Allow the definitions to structure your proof. This is what we call a follow your nose proof, in the sense there is only really one, straightforward, way to go. You may find , Proposition , and useful.  "
+  "body": " Try a direct proof. Allow the definitions to structure your proof. This is what we call a follow your nose proof, in the sense there is only really one, straightforward, way to go. You may find , , and useful.  "
 },
 {
   "id": "chp2sec5-4",
@@ -826,7 +826,7 @@ var ptx_lunr_docs = [
   "type": "Hint",
   "number": "2.5.2",
   "title": "",
-  "body": " Try a direct proof. Generalize your proof of Proposition .  "
+  "body": " Try a direct proof. Generalize your proof of .  "
 },
 {
   "id": "def-subspace_sums",
@@ -853,7 +853,7 @@ var ptx_lunr_docs = [
   "type": "Hint",
   "number": "2.5.3",
   "title": "",
-  "body": " Try a direct proof. Allow the definitions to structure your proof. This is another follow your nose proof. You may find , Proposition , and useful.  "
+  "body": " Try a direct proof. Allow the definitions to structure your proof. This is another follow your nose proof. You may find , , and useful.  "
 },
 {
   "id": "chp2sec5-10",
@@ -871,7 +871,7 @@ var ptx_lunr_docs = [
   "type": "Hint",
   "number": "2.5.4",
   "title": "",
-  "body": " Try an inductive proof. Observe (WHY?) You may find , , and Proposition useful.  "
+  "body": " Try an inductive proof. Observe (WHY?) You may find , , and useful.  "
 },
 {
   "id": "chp2sec5-12",
@@ -880,7 +880,7 @@ var ptx_lunr_docs = [
   "type": "Discussion",
   "number": "2.5.6",
   "title": "",
-  "body": " If are vector subspaces, then their union is almost never a vector subspace. Carefully demonstrate this in visually with lines and symbolically with subspaces and as defined in Proposition .  "
+  "body": " If are vector subspaces, then their union is almost never a vector subspace. Carefully demonstrate this in visually with lines and symbolically with subspaces and as defined in .  "
 },
 {
   "id": "chp2sec6",
@@ -1159,7 +1159,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.9",
   "title": "The Redundancy Reduction Algorithm",
-  "body": " The Redundancy Reduction Algorithm  In this investigation you prove the most significant and sophisticated result yet - the Redundancy Reduction Algorithm.   Redundancy Reduction Algorithm (RRA)   If , and is dependent, then there exists a such that   and it follows then that . Furthermore, may be taken to be the first index for which is independent but is dependent.     Try a direct proof. For simplicity of notation, for each index , , let denote the subset . Observe .  Note that is independent (why?) and is dependent (why?).  Let be the first index such that is independent but is dependent. (Why does such a exists?)  Show that via both inclusions. The inclusion is immediate (why?). Show the opposite inclusion reduces to showing (why?). You may find , , and useful.    Every finite set can be reduced to an independent set with the same span   If is a vector space and is a finite subset, then there exists an independent subset such that .     Try a direct proof. Iterate the Redundancy Reduction Algorithm (Theorem ).   Observe that you have described an explicit process for removing all redundancy from finite sets of vectors, while preserving the set of all possible mixtures!   An algorithm is a finite sequence of well-defined instructions to perform a computation. Algorithms are powerful because they are easily programed and implemented by computers. Think back on your past courses and experiences. What other algorithms have you encountered? What problems did they solve? Explain why algorithms are often better to program and have a computer run than to implement by hand.   "
+  "body": " The Redundancy Reduction Algorithm  In this investigation you prove the most significant and sophisticated result yet - the Redundancy Reduction Algorithm.   Redundancy Reduction Algorithm (RRA)   If , and is dependent, then there exists a such that   and it follows then that . Furthermore, may be taken to be the first index for which is independent but is dependent.     Try a direct proof. For simplicity of notation, for each index , , let denote the subset . Observe .  Note that is independent (why?) and is dependent (why?).  Let be the first index such that is independent but is dependent. (Why does such a exists?)  Show that via both inclusions. The inclusion is immediate (why?). Show the opposite inclusion reduces to showing (why?). You may find , , and useful.    Every finite set can be reduced to an independent set with the same span   If is a vector space and is a finite subset, then there exists an independent subset such that .     Try a direct proof. Iterate the Redundancy Reduction Algorithm ( ).   Observe that you have described an explicit process for removing all redundancy from finite sets of vectors, while preserving the set of all possible mixtures!   An algorithm is a finite sequence of well-defined instructions to perform a computation. Algorithms are powerful because they are easily programed and implemented by computers. Think back on your past courses and experiences. What other algorithms have you encountered? What problems did they solve? Explain why algorithms are often better to program and have a computer run than to implement by hand.   "
 },
 {
   "id": "thm-rra",
@@ -1195,7 +1195,7 @@ var ptx_lunr_docs = [
   "type": "Hint",
   "number": "2.9.2",
   "title": "",
-  "body": " Try a direct proof. Iterate the Redundancy Reduction Algorithm (Theorem ).  "
+  "body": " Try a direct proof. Iterate the Redundancy Reduction Algorithm ( ).  "
 },
 {
   "id": "chp2sec9-8",
@@ -2347,7 +2347,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.9",
   "title": "Matrix Theorem",
-  "body": " Matrix Theorem  You showed that matrix transformations are linear maps. The surprising and powerful result you will prove in this investigation is, upon choosing coordinates, every linear map between finite dimensional vector spaces is a matrix transformation.   Matrix Theorem   If and are bases and is a linear map, then there exists a unique matrix such that, for all ,   Furthermore, this matrix can be calculated by finding the -coordinates of the images of each -basis vector, i.e. if , then      Try a direct proof. Begin by proving existence. Carefully show that the matrix in satisfies . To do this, you may find it useful to expand relative to , apply , and then -coordinates. Next show uniqueness by supposing that, if matrix satisfies (i.e. ), then . To do this, reason about and and deduce that, for each , . You may find , , , , , , , and useful.   The statement of the Theorem can be visualized by saying that both paths in the below diagram from the top left to the bottom right give the same output. (We say that the diagram commutes ).  Observing that the mixture map reverses the coordinate map, Theorem can be rephrased as saying the following diagram commutes.    If is a matrix transformation with associated matrix , and is an ordered basis, then where .     Similar Matrix Decomposition   If , then this is a similar matrix decomposition (SMD) of and we say and are similar .    A major goal of future investigations will be to find good bases relative to which matrices have a nice similar matrix decomposition.   As stated earlier, the highlight of this section is, you have shown that, upon choosing coordinates, every linear map is a matrix transformation. With that in mind, in a few paragraphs, address each of the following prompts.    If every linear map is a matrix transformation, why work with linear maps at all? Why not just work with matrix transformations?    If our goal is to understand linear maps, what does the Matrix Theorem tell us about the significance of choosing bases? How can bases be understood as a problem solving strategy in this context?     "
+  "body": " Matrix Theorem  You showed that matrix transformations are linear maps. The surprising and powerful result you will prove in this investigation is, upon choosing coordinates, every linear map between finite dimensional vector spaces is a matrix transformation.   Matrix Theorem   If and are bases and is a linear map, then there exists a unique matrix such that, for all ,   Furthermore, this matrix can be calculated by finding the -coordinates of the images of each -basis vector, i.e. if , then      Try a direct proof. Begin by proving existence. Carefully show that the matrix in satisfies . To do this, you may find it useful to expand relative to , apply , and then -coordinates. Next show uniqueness by supposing that, if matrix satisfies (i.e. ), then . To do this, reason about and and deduce that, for each , . You may find , , , , , , , and useful.   The statement of the can be visualized by saying that both paths in the below diagram from the top left to the bottom right give the same output. (We say that the diagram commutes ).  Observing that the mixture map reverses the coordinate map, can be rephrased as saying the following diagram commutes.    If is a matrix transformation with associated matrix , and is an ordered basis, then where .     Similar Matrix Decomposition   If , then this is a similar matrix decomposition (SMD) of and we say and are similar .    A major goal of future investigations will be to find good bases relative to which matrices have a nice similar matrix decomposition.   As stated earlier, the highlight of this section is, you have shown that, upon choosing coordinates, every linear map is a matrix transformation. With that in mind, in a few paragraphs, address each of the following prompts.    If every linear map is a matrix transformation, why work with linear maps at all? Why not just work with matrix transformations?    If our goal is to understand linear maps, what does the Matrix Theorem tell us about the significance of choosing bases? How can bases be understood as a problem solving strategy in this context?     "
 },
 {
   "id": "thm-matrix_coordinates",
@@ -2393,6 +2393,204 @@ var ptx_lunr_docs = [
   "number": "3.9.4",
   "title": "",
   "body": " As stated earlier, the highlight of this section is, you have shown that, upon choosing coordinates, every linear map is a matrix transformation. With that in mind, in a few paragraphs, address each of the following prompts.    If every linear map is a matrix transformation, why work with linear maps at all? Why not just work with matrix transformations?    If our goal is to understand linear maps, what does the Matrix Theorem tell us about the significance of choosing bases? How can bases be understood as a problem solving strategy in this context?    "
+},
+{
+  "id": "chp4sec1",
+  "level": "1",
+  "url": "chp4sec1.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Invariant Subspaces",
+  "body": " Invariant Subspaces  "
+},
+{
+  "id": "chp4sec2",
+  "level": "1",
+  "url": "chp4sec2.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Direct Sums",
+  "body": " Direct Sums  "
+},
+{
+  "id": "chp4sec3",
+  "level": "1",
+  "url": "chp4sec3.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Invariant Subspaces - Cyclic Subspaces",
+  "body": " Invariant Subspaces - Cyclic Subspaces  "
+},
+{
+  "id": "chp4sec4",
+  "level": "1",
+  "url": "chp4sec4.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Invariant Subspaces - Eigenspaces",
+  "body": " Invariant Subspaces - Eigenspaces  "
+},
+{
+  "id": "chp4sec5",
+  "level": "1",
+  "url": "chp4sec5.html",
+  "type": "Section",
+  "number": "4.5",
+  "title": "Jordan Chains",
+  "body": " Jordan Chains  "
+},
+{
+  "id": "chp4sec6",
+  "level": "1",
+  "url": "chp4sec6.html",
+  "type": "Section",
+  "number": "4.6",
+  "title": "Invariant Subspaces - Jordan Subspaces",
+  "body": " Invariant Subspaces - Jordan Subspaces  "
+},
+{
+  "id": "chp4sec7",
+  "level": "1",
+  "url": "chp4sec7.html",
+  "type": "Section",
+  "number": "4.7",
+  "title": "The Vector Space of Linear Maps",
+  "body": " The Vector Space of Linear Maps  "
+},
+{
+  "id": "chp4sec8",
+  "level": "1",
+  "url": "chp4sec8.html",
+  "type": "Section",
+  "number": "4.8",
+  "title": "Minimal Polynomials of Linear Maps",
+  "body": " Minimal Polynomials of Linear Maps  "
+},
+{
+  "id": "chp4sec9",
+  "level": "1",
+  "url": "chp4sec9.html",
+  "type": "Section",
+  "number": "4.9",
+  "title": "Nontrivial Invariant Subspaces",
+  "body": " Nontrivial Invariant Subspaces  "
+},
+{
+  "id": "chp4sec10",
+  "level": "1",
+  "url": "chp4sec10.html",
+  "type": "Section",
+  "number": "4.10",
+  "title": "The Rational Jordan Decomposition",
+  "body": " The Rational Jordan Decomposition  "
+},
+{
+  "id": "chp4sec11",
+  "level": "1",
+  "url": "chp4sec11.html",
+  "type": "Section",
+  "number": "4.11",
+  "title": "The Complex Jordan Decomposition",
+  "body": " The Complex Jordan Decomposition  "
+},
+{
+  "id": "chp5sec1",
+  "level": "1",
+  "url": "chp5sec1.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Inner Products",
+  "body": " Inner Products  "
+},
+{
+  "id": "chp5sec2",
+  "level": "1",
+  "url": "chp5sec2.html",
+  "type": "Section",
+  "number": "5.2",
+  "title": "Dot Products",
+  "body": " Dot Products  "
+},
+{
+  "id": "chp5sec3",
+  "level": "1",
+  "url": "chp5sec3.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "Orthogonal Vectors",
+  "body": " Orthogonal Vectors  "
+},
+{
+  "id": "chp5sec4",
+  "level": "1",
+  "url": "chp5sec4.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Orthogonal Complements",
+  "body": " Orthogonal Complements  "
+},
+{
+  "id": "chp5sec5",
+  "level": "1",
+  "url": "chp5sec5.html",
+  "type": "Section",
+  "number": "5.5",
+  "title": "Orthogonal Projection",
+  "body": " Orthogonal Projection  "
+},
+{
+  "id": "chp5sec6",
+  "level": "1",
+  "url": "chp5sec6.html",
+  "type": "Section",
+  "number": "5.6",
+  "title": "Adjoint Maps",
+  "body": " Adjoint Maps  "
+},
+{
+  "id": "chp5sec7",
+  "level": "1",
+  "url": "chp5sec7.html",
+  "type": "Section",
+  "number": "5.7",
+  "title": "The Rational Spectral Theorem",
+  "body": " The Rational Spectral Theorem  "
+},
+{
+  "id": "chp5sec8",
+  "level": "1",
+  "url": "chp5sec8.html",
+  "type": "Section",
+  "number": "5.8",
+  "title": "The Real Spectral Theorem",
+  "body": " The Real Spectral Theorem  "
+},
+{
+  "id": "chp5sec9",
+  "level": "1",
+  "url": "chp5sec9.html",
+  "type": "Section",
+  "number": "5.9",
+  "title": "Isometries",
+  "body": " Isometries  "
+},
+{
+  "id": "chp5sec10",
+  "level": "1",
+  "url": "chp5sec10.html",
+  "type": "Section",
+  "number": "5.10",
+  "title": "Nonnegative Self-Adjoint Maps",
+  "body": " Nonnegative Self-Adjoint Maps  "
+},
+{
+  "id": "chp5sec11",
+  "level": "1",
+  "url": "chp5sec11.html",
+  "type": "Section",
+  "number": "5.11",
+  "title": "Polar and Singular Value Decompositions",
+  "body": " Polar and Singular Value Decompositions  "
 },
 {
   "id": "backmatter-2",
